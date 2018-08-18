@@ -1,22 +1,30 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
+import { get } from '../utils/helpers'
 
 import BandLogo from './BandLogo'
-import song from '../audio/Easy October - Song.wav'
+import Dice from './Dice'
+import Tile from './Tile'
 
 export default class GameScreen extends Component {
-  playSong() {
+  /* playSong() {
     document.querySelector('button').addEventListener('click', () => {
       let audioCtx = new (window.AudioContext || window.webkitAudioContext)()
-      console.log(document.querySelector('audio'))
-      const song = document.querySelector('audio')
-
+      const song = get('audio')
+      console.log(song)
       // Create a MediaElementAudioSourceNode
       // Feed the HTMLMediaElement into it
       const source = audioCtx.createMediaElementSource(song)
       source.connect(audioCtx.destination)
     })
+  } */
+
+  playSong() {
+    const song = document.querySelector('audio')
+    song.play()
+    console.log(song)
   }
+
   render() {
     const StyledGame = styled('div')`
       width: 100%;
@@ -24,11 +32,13 @@ export default class GameScreen extends Component {
       display: flex;
       justify-content: center;
     `
+    const btn = get('button')
+    btn.addEventListener('click', e => this.playSong())
     return (
       <StyledGame>
         <BandLogo />
-        <audio src={song} />
-        {this.playSong()}
+        <Tile />
+        <Dice />
       </StyledGame>
     )
   }

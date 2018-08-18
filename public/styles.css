@@ -1,0 +1,30 @@
+body {
+  background: darkred;
+  height: 100vh;
+}
+
+.disc-rotation {
+  animation: rotation 2s infinite linear;
+}
+
+.dice-pump {
+  animation: pump 1s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes pump {
+  from {
+    -webkit-transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.9);
+  }
+}
