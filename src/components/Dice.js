@@ -21,6 +21,7 @@ export default class Dice extends Component {
       bottom: -13%;
       right: -5%;
     `
+
     return (
       <div>
         <StyledHighlight

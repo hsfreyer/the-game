@@ -9,7 +9,7 @@ import initialState from './reducers/initialState'
 
 import StartScreen from './components/StartScreen'
 import CharacterScreen from './components/CharacterScreen'
-import GameView from './containers/GameView'
+import GameView from './containers/GameScreenView'
 
 const store = createStore(
   reducer,

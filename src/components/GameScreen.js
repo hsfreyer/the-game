@@ -18,12 +18,18 @@ export default class GameScreen extends Component {
       source.connect(audioCtx.destination)
     })
   } */
+  positionTiles() {
+    const positions = this.props.tilePositions
+    return positions.map((position, index) => {
+      return <Tile posx={position.x} posy={position.y} key={index} />
+    })
+  }
 
-  playSong() {
+  /*playSong() {
     const song = document.querySelector('audio')
     song.play()
     console.log(song)
-  }
+  }*/
 
   render() {
     const StyledGame = styled('div')`
@@ -32,12 +38,12 @@ export default class GameScreen extends Component {
       display: flex;
       justify-content: center;
     `
-    const btn = get('button')
-    btn.addEventListener('click', e => this.playSong())
+    /* const btn = get('button')
+    btn.addEventListener('click', e => this.playSong())*/
     return (
       <StyledGame>
         <BandLogo />
-        <Tile />
+        {this.positionTiles()}
         <Dice />
       </StyledGame>
     )
