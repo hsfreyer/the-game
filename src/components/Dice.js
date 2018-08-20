@@ -6,7 +6,7 @@ import imgHighlight from '../images/in-game/T_dice_highlight.svg'
 export default class Dice extends Component {
   render() {
     const StyledHighlight = styled('img')`
-      width: 36%;
+      width: 34%;
       object-fit: contain;
       position: absolute;
       bottom: -19%;
@@ -14,7 +14,7 @@ export default class Dice extends Component {
     `
 
     const StyledDice = styled('img')`
-      width: 29%;
+      width: 27%;
       object-fit: contain;
       position: absolute;
       bottom: -13%;

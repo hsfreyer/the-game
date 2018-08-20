@@ -9,6 +9,7 @@ import Dice from './Dice'
 import imgDice from '../images/in-game/T_dice_06.svg'
 
 import Tile from './Tile'
+import Pawn from './Pawn'
 
 export default class GameScreen extends Component {
   /* playSong() {
@@ -51,6 +52,10 @@ export default class GameScreen extends Component {
         <BandLogo />
         {this.positionTiles()}
         <Dice img={imgDice} />
+        <Pawn
+          posx={this.props.player.position.x}
+          posy={this.props.player.position.y}
+        />
       </StyledGame>
     )
   }

@@ -8,7 +8,7 @@ body {
 }
 
 .dice-pump {
-  animation: pump 1s infinite linear;
+  animation: pump 1s infinite ease-out;
 }
 
 @keyframes rotation {

@@ -1,13 +1,15 @@
 import { connect } from 'react-redux'
 import GameScreen from '../components/GameScreen'
-import { rollDice } from '../actions'
+import { movePawn } from '../actions'
 
 const mapStateToProps = state => ({
-  tilePositions: state.tilePositions
+  tilePositions: state.tilePositions,
+  player: state.player
 })
 
 const mapDispatchToProps = dispatch => ({
-  rollDice: tile => dispatch(rollDice())
+  movePawn: position => dispatch(movePawn(position)),
+  rollDice: () => dispatch(rollDice())
 })
 
 export default connect(

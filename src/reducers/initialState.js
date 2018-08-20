@@ -4,7 +4,7 @@ const yStart = 20
 export default {
   player: {
     tile: null,
-    position: { x: 20, y: 20 },
+    position: { x: 11, y: 11 },
     band: null,
     pawn: null
   },
@@ -22,7 +22,20 @@ export default {
     { x: xStart + 6, y: yStart + 39 },
     { x: xStart + 5, y: yStart + 47 },
     { x: xStart + 6, y: yStart + 55 },
-    { x: xStart + 14, y: yStart + 59 }
+    { x: xStart + 14, y: yStart + 59 },
+    { x: xStart + 22, y: yStart + 58 },
+    { x: xStart + 30, y: yStart + 56 },
+    { x: xStart + 37, y: yStart + 54 },
+    { x: xStart + 44, y: yStart + 52 },
+    { x: xStart + 50, y: yStart + 47 },
+    { x: xStart + 48, y: yStart + 40 },
+    { x: xStart + 45, y: yStart + 33 },
+    { x: xStart + 45, y: yStart + 25 },
+    { x: xStart + 51.5, y: yStart + 23 },
+    { x: xStart + 50, y: yStart + 16 },
+    { x: xStart + 46, y: yStart + 10 },
+    { x: xStart + 42, y: yStart + 4 },
+    { x: xStart + 43, y: yStart - 3 }
   ],
   bands: {
     babyJesus: { charImg: null, gameImg: null }
