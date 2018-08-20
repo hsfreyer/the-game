@@ -5,7 +5,8 @@ import imgBackground from '../images/in-game/T_ig_background.png'
 
 import BandLogo from './BandLogo'
 import Dice from './Dice'
-import imgDice from '../images/in-game/T_dice_06.svg'
+import DiceResult from './DiceResult'
+import imgResult from '../images/in-game/T_dice_num_01.svg'
 
 import Tile from './Tile'
 import Pawn from './Pawn'
@@ -32,7 +33,11 @@ export default class GameScreen extends Component {
       <StyledGame>
         <BandLogo />
         {this.positionTiles()}
-        <Dice img={imgDice} />
+        <Dice
+          img={this.props.dice.active.imgDice}
+          onClick={() => this.props.rollDice()}
+        />
+        <DiceResult img={this.props.dice.active.imgResult} />
         <Pawn
           posx={this.props.player.position.x}
           posy={this.props.player.position.y}

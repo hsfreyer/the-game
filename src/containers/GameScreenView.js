@@ -4,7 +4,8 @@ import { movePawn, rollDice } from '../actions'
 
 const mapStateToProps = state => ({
   tilePositions: state.tilePositions,
-  player: state.player
+  player: state.player,
+  dice: state.dice
 })
 
 const mapDispatchToProps = dispatch => ({

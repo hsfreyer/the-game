@@ -28,7 +28,11 @@ export default class Dice extends Component {
           alt=" no pic here"
           className="dice-pump"
         />
-        <StyledDice src={this.props.img} alt=" no pic here" />
+        <StyledDice
+          src={this.props.img}
+          alt=" no pic here"
+          onClick={this.props.onClick}
+        />
       </div>
     )
   }
