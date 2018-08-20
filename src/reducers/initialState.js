@@ -1,5 +1,5 @@
-const xStart = 25
-const yStart = 25
+const xStart = 21
+const yStart = 20
 
 export default {
   player: {

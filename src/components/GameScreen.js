@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'react-emotion'
 // import { get } from '../utils/helpers'
 
-import imgBackground from './images/in-game/T-ig_background.png'
+import imgBackground from '../images/in-game/T_ig_background.png'
 
 import BandLogo from './BandLogo'
 import Dice from './Dice'
@@ -39,7 +39,8 @@ export default class GameScreen extends Component {
     const StyledGame = styled('div')`
       width: 100%;
       height: 100vh;
-      background:${imgBackground}
+      background-image: url('${imgBackground}');
+      background-size: cover;
       display: flex;
       justify-content: center;
     `
