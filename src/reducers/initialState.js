@@ -5,7 +5,8 @@ export default {
   player: {
     tile: null,
     position: { x: 20, y: 20 },
-    band: null
+    band: null,
+    pawn: null
   },
   tilePositions: [
     { x: xStart + 2, y: yStart + 5 },
@@ -25,5 +26,15 @@ export default {
   ],
   bands: {
     babyJesus: { charImg: null, gameImg: null }
+  },
+  dice: {
+    standard: null,
+    roll: null,
+    one: null,
+    two: null,
+    three: null,
+    four: null,
+    five: null,
+    six: null
   }
 }

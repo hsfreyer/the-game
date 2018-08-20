@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
 
-import imgDice from '../images/in-game/T_dice_06.svg'
 import imgHighlight from '../images/in-game/T_dice_highlight.svg'
 
 export default class Dice extends Component {
@@ -29,7 +28,7 @@ export default class Dice extends Component {
           alt=" no pic here"
           className="dice-pump"
         />
-        <StyledDice src={imgDice} alt=" no pic here" />
+        <StyledDice src={this.props.img} alt=" no pic here" />
       </div>
     )
   }

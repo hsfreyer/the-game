@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
-import { get } from '../utils/helpers'
+// import { get } from '../utils/helpers'
+
+import imgBackground from './images/in-game/T-ig_background.png'
 
 import BandLogo from './BandLogo'
 import Dice from './Dice'
+import imgDice from '../images/in-game/T_dice_06.svg'
+
 import Tile from './Tile'
 
 export default class GameScreen extends Component {
@@ -35,6 +39,7 @@ export default class GameScreen extends Component {
     const StyledGame = styled('div')`
       width: 100%;
       height: 100vh;
+      background:${imgBackground}
       display: flex;
       justify-content: center;
     `
@@ -44,7 +49,7 @@ export default class GameScreen extends Component {
       <StyledGame>
         <BandLogo />
         {this.positionTiles()}
-        <Dice />
+        <Dice img={imgDice} />
       </StyledGame>
     )
   }
