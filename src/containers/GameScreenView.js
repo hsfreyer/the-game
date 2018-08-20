@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import GameScreen from '../components/GameScreen'
-import { movePawn } from '../actions'
+import { movePawn, rollDice } from '../actions'
 
 const mapStateToProps = state => ({
   tilePositions: state.tilePositions,
