@@ -1,4 +1,6 @@
 {
+  "short_name": "the game",
+  "name": "Westside Story - The Game",
   "icons": [
     {
       "src": "favicon.ico",
@@ -7,6 +9,8 @@
     }
   ],
   "start_url": "./index.html",
+  "display": "fullscreen",
+  "orientation": "landscape",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
