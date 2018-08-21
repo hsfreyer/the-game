@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  movePawn: position => dispatch(movePawn(position)),
+  movePawn: tile => dispatch(movePawn(tile)),
   rollDice: () => dispatch(rollDice()),
   updateCount: image => dispatch(updateCount(image))
 })

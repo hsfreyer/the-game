@@ -27,7 +27,8 @@ export default {
     tile: null,
     position: { x: 11, y: 11 },
     band: null,
-    pawn: null
+    pawn: null,
+    roll: null
   },
   countDown: {
     sequence: [countDown1, countDown2, countDown3, countDown4],

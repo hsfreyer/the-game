@@ -15,8 +15,9 @@ export default class GameScreen extends Component {
   countDown(images) {
     // console.log(images)
     images.forEach(image => {
-      //  console.log(image)
-      setTimeout(image => this.props.updateCount(image), 500)
+      setTimeout(() => {
+        this.props.updateCount(image)
+      }, 1000)
     })
   }
 
@@ -25,6 +26,9 @@ export default class GameScreen extends Component {
     return positions.map((position, index) => {
       return <Tile posx={position.x} posy={position.y} key={index} />
     })
+  }
+  componentDidMount() {
+    this.countDown(this.props.countDownSequence)
   }
 
   render() {
@@ -36,16 +40,18 @@ export default class GameScreen extends Component {
       display: flex;
       justify-content: center;
     `
-
     return (
       <StyledGame>
         <CountDown img={this.props.countDownImage} />
-        {this.countDown(this.props.countDownSequence)}
+
         <BandLogo />
         {this.positionTiles()}
         <Dice
           img={this.props.dice.active.imgDice}
-          onClick={() => this.props.rollDice()}
+          onClick={() => {
+            this.props.rollDice()
+            this.props.movePawn(1)
+          }}
         />
         <DiceResult img={this.props.dice.active.imgResult} />
         <Pawn

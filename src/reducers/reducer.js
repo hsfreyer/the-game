@@ -13,8 +13,9 @@ export default (state, action) => {
           active: state.dice.result[roll]
         }
       }
-    case Actions.COUNT_DOWN:
+    case Actions.UPDATE_COUNT:
       console.log(action.payload)
+      setTimeout(500)
       return {
         ...state,
         countDown: {
@@ -22,7 +23,10 @@ export default (state, action) => {
           image: action.payload
         }
       }
-
+    case Actions.MOVE_PAWN:
+      return {
+        ...state
+      }
     default:
       return state
   }
