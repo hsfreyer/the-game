@@ -4,6 +4,11 @@ import titleScreen from '../images/T_TitleScreen.png'
 import { BrowserRouter as Link } from 'react-router-dom'
 
 const Wrapper = styled('div')`
+@media (orientation: portrait) {
+    width: 100vh;
+    height: 100vw;
+    
+}
   width: 100vw;
   height: 100vh;
   background-image: url('${titleScreen}');

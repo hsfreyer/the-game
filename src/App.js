@@ -23,9 +23,9 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div>
-            <Route path="/game" component={GameView} />
             <Route exact path="/" component={StartScreen} />
             <Route path="/characters" component={CharacterScreen} />
+            <Route path="/game" component={GameView} />
           </div>
         </Router>
       </Provider>

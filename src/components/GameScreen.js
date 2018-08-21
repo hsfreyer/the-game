@@ -6,12 +6,20 @@ import imgBackground from '../images/in-game/T_ig_background.png'
 import BandLogo from './BandLogo'
 import Dice from './Dice'
 import DiceResult from './DiceResult'
-import imgResult from '../images/in-game/T_dice_num_01.svg'
+import CountDown from './CountDown'
 
 import Tile from './Tile'
 import Pawn from './Pawn'
 
 export default class GameScreen extends Component {
+  countDown(images) {
+    // console.log(images)
+    images.forEach(image => {
+      //  console.log(image)
+      setTimeout(image => this.props.updateCount(image), 500)
+    })
+  }
+
   positionTiles() {
     const positions = this.props.tilePositions
     return positions.map((position, index) => {
@@ -31,6 +39,8 @@ export default class GameScreen extends Component {
 
     return (
       <StyledGame>
+        <CountDown img={this.props.countDownImage} />
+        {this.countDown(this.props.countDownSequence)}
         <BandLogo />
         {this.positionTiles()}
         <Dice

@@ -13,6 +13,16 @@ export default (state, action) => {
           active: state.dice.result[roll]
         }
       }
+    case Actions.COUNT_DOWN:
+      console.log(action.payload)
+      return {
+        ...state,
+        countDown: {
+          ...state.countDown,
+          image: action.payload
+        }
+      }
+
     default:
       return state
   }

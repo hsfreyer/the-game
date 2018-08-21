@@ -14,6 +14,11 @@ import imgResult4 from '../images/in-game/T_dice_num_04.svg'
 import imgResult5 from '../images/in-game/T_dice_num_05.svg'
 import imgResult6 from '../images/in-game/T_dice_num_06.svg'
 
+import countDown1 from '../images/in-game/T_countdown_01.svg'
+import countDown2 from '../images/in-game/T_countdown_02.svg'
+import countDown3 from '../images/in-game/T_countdown_03.svg'
+import countDown4 from '../images/in-game/T_countdown_04.svg'
+
 const xStart = 21
 const yStart = 20
 
@@ -23,6 +28,10 @@ export default {
     position: { x: 11, y: 11 },
     band: null,
     pawn: null
+  },
+  countDown: {
+    sequence: [countDown1, countDown2, countDown3, countDown4],
+    image: null
   },
   tilePositions: [
     { x: xStart + 2, y: yStart + 5 },
