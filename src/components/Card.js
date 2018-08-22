@@ -24,8 +24,6 @@ export default class Card extends Component {
       transform: ${selectedCharacter === name
         ? 'rotate(5deg) scale(1.2)'
         : 'rotate(0deg) scale(1)'};
-      background: white;
-      background-size: 50px;
     `
 
     if (selectedCharacter === name) {

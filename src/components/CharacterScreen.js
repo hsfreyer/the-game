@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import backgroundImage from '../images/T_CharacterMenu_background.png'
 import BtnStart from '../images/bttn_start_on.svg'
+import BtnStartPress from '../images/bttn_start_press.svg'
 import Card from './Card'
 
 import imgEasy from '../images/T_cm_b1_easy.png'
@@ -48,6 +49,23 @@ const Image = styled('img')`
 `
 
 export default class CharacterScreen extends Component {
+  renderStartButton = () => {
+    if (this.props.selectedCharacter !== null) {
+      return (
+        <Link to="/game">
+          <ImageWrapper>
+            <Image src={BtnStart} alt="" />
+          </ImageWrapper>
+        </Link>
+      )
+    } else {
+      return (
+        <ImageWrapper>
+          <Image src={BtnStart} alt="" />
+        </ImageWrapper>
+      )
+    }
+  }
   // renderCards = () => {
   //   this.props.bands.map(band => {
   //     return (
@@ -99,11 +117,7 @@ export default class CharacterScreen extends Component {
             onClick={e => this.props.chooseCharacter('Bottle')}
           />
         </CardWrapper>
-        <Link to="/game">
-          <ImageWrapper>
-            <Image src={BtnStart} alt="" />
-          </ImageWrapper>
-        </Link>
+        {this.renderStartButton()}
       </Container>
     )
   }
