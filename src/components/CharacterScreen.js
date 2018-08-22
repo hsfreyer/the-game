@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import backgroundImage from '../images/T_CharacterMenu_background.png'
 import BtnStart from '../images/bttn_start_on.svg'
-import BtnStartPress from '../images/bttn_start_press.svg'
+// import BtnStartPress from '../images/bttn_start_press.svg'
 import Card from './Card'
 
 import imgEasy from '../images/T_cm_b1_easy.png'
