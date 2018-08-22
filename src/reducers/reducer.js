@@ -10,8 +10,8 @@ export default (state, action) => {
         ...state,
         dice: {
           ...state.dice,
-          active: state.dice.result[roll]
-        }
+          active: state.dice.result[roll],
+        },
       }
     case Actions.UPDATE_COUNT:
       console.log(action.payload)
@@ -20,13 +20,15 @@ export default (state, action) => {
         ...state,
         countDown: {
           ...state.countDown,
-          image: action.payload
-        }
+          image: action.payload,
+        },
       }
     case Actions.MOVE_PAWN:
       return {
-        ...state
+        ...state,
       }
+    case Actions.CHOOSE_CHARACTER:
+      return { ...state, selectedCharacter: action.payload }
     default:
       return state
   }

@@ -8,13 +8,13 @@ import reducer from './reducers/reducer'
 import initialState from './reducers/initialState'
 
 import StartScreen from './components/StartScreen'
-import CharacterScreen from './components/CharacterScreen'
+import CharacterScreenView from './containers/CharacterScreenView'
 import GameView from './containers/GameScreenView'
 
 const store = createStore(
   reducer,
   initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 )
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
         <Router>
           <div>
             <Route exact path="/" component={StartScreen} />
-            <Route path="/characters" component={CharacterScreen} />
+            <Route path="/characters" component={CharacterScreenView} />
             <Route path="/game" component={GameView} />
           </div>
         </Router>
