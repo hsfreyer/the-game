@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
-import { BrowserRouter as Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import backgroundImage from '../images/T_CharacterMenu_background.png'
 import BtnStart from '../images/bttn_start_on.svg'
@@ -48,25 +48,24 @@ const Image = styled('img')`
 `
 
 export default class CharacterScreen extends Component {
-  renderCards = () => {
-    this.props.bands.map(band => {
-      return (
-        <Card
-          name={band.name}
-          picture={band.picture}
-          sketch={band.sketch}
-          audio={band.audio}
-          selectedCharacter={this.props.selectedCharacter}
-          onClick={e => this.props.chooseCharacter(`${band.name}`)}
-        />
-      )
-    })
-  }
+  // renderCards = () => {
+  //   this.props.bands.map(band => {
+  //     return (
+  //       <Card
+  //         name={band.name}
+  //         picture={band.picture}
+  //         sketch={band.sketch}
+  //         audio={band.audio}
+  //         selectedCharacter={this.props.selectedCharacter}
+  //         onClick={e => this.props.chooseCharacter(`${band.name}`)}
+  //       />
+  //     )
+  //   })
+  // }
   render() {
     return (
       <Container>
         <CardWrapper>
-          {this.renderCards()}
           <Card
             name="Easy"
             picture={imgEasy}

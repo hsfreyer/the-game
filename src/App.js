@@ -24,8 +24,8 @@ class App extends Component {
         <Router>
           <div>
             <Route exact path="/" component={StartScreen} />
-            <Route path="/characters" component={CharacterScreenView} />
-            <Route path="/game" component={GameView} />
+            <Route path={'/characters'} component={CharacterScreenView} />
+            <Route path={'/game'} component={GameView} />
           </div>
         </Router>
       </Provider>
