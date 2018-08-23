@@ -43,40 +43,40 @@ export default {
     position: { x: 11, y: 11 },
     band: null,
     pawn: null,
-    roll: null,
+    roll: null
   },
   countDown: {
     sequence: [countDown1, countDown2, countDown3, countDown4],
-    image: null,
+    image: null
   },
-  tilePositions: [
-    { x: xStart + 2, y: yStart + 5 },
-    { x: xStart + 9, y: yStart + 3 },
-    { x: xStart + 16, y: yStart + 2 },
-    { x: xStart + 21, y: yStart + 8 },
-    { x: xStart + 26, y: yStart + 14 },
-    { x: xStart + 30, y: yStart + 22 },
-    { x: xStart + 23, y: yStart + 23 },
-    { x: xStart + 16, y: yStart + 23 },
-    { x: xStart + 9, y: yStart + 25 },
-    { x: xStart + 7, y: yStart + 32 },
-    { x: xStart + 6, y: yStart + 39 },
-    { x: xStart + 5, y: yStart + 47 },
-    { x: xStart + 6, y: yStart + 55 },
-    { x: xStart + 14, y: yStart + 59 },
-    { x: xStart + 22, y: yStart + 58 },
-    { x: xStart + 30, y: yStart + 56 },
-    { x: xStart + 37, y: yStart + 54 },
-    { x: xStart + 44, y: yStart + 52 },
-    { x: xStart + 50, y: yStart + 47 },
-    { x: xStart + 48, y: yStart + 40 },
-    { x: xStart + 45, y: yStart + 33 },
-    { x: xStart + 45, y: yStart + 25 },
-    { x: xStart + 51.5, y: yStart + 23 },
-    { x: xStart + 50, y: yStart + 16 },
-    { x: xStart + 46, y: yStart + 10 },
-    { x: xStart + 42, y: yStart + 4 },
-    { x: xStart + 43, y: yStart - 3 },
+  tiles: [
+    { position: { x: xStart + 2, y: yStart + 5 }, action: null },
+    { position: { x: xStart + 9, y: yStart + 3 }, action: null },
+    { position: { x: xStart + 16, y: yStart + 2 }, action: null },
+    { position: { x: xStart + 21, y: yStart + 8 }, action: null },
+    { position: { x: xStart + 26, y: yStart + 14 }, action: null },
+    { position: { x: xStart + 30, y: yStart + 22 }, action: null },
+    { position: { x: xStart + 23, y: yStart + 23 }, action: null },
+    { position: { x: xStart + 16, y: yStart + 23 }, action: null },
+    { position: { x: xStart + 9, y: yStart + 25 }, action: null },
+    { position: { x: xStart + 7, y: yStart + 32 }, action: null },
+    { position: { x: xStart + 6, y: yStart + 39 }, action: null },
+    { position: { x: xStart + 5, y: yStart + 47 }, action: null },
+    { position: { x: xStart + 6, y: yStart + 55 }, action: null },
+    { position: { x: xStart + 14, y: yStart + 59 }, action: null },
+    { position: { x: xStart + 22, y: yStart + 58 }, action: null },
+    { position: { x: xStart + 30, y: yStart + 56 }, action: null },
+    { position: { x: xStart + 37, y: yStart + 54 }, action: null },
+    { position: { x: xStart + 44, y: yStart + 52 }, action: null },
+    { position: { x: xStart + 50, y: yStart + 47 }, action: null },
+    { position: { x: xStart + 48, y: yStart + 40 }, action: null },
+    { position: { x: xStart + 45, y: yStart + 33 }, action: null },
+    { position: { x: xStart + 45, y: yStart + 25 }, action: null },
+    { position: { x: xStart + 51.5, y: yStart + 23 }, action: null },
+    { position: { x: xStart + 50, y: yStart + 16 }, action: null },
+    { position: { x: xStart + 46, y: yStart + 10 }, action: null },
+    { position: { x: xStart + 42, y: yStart + 4 }, action: null },
+    { position: { x: xStart + 43, y: yStart - 3 }, action: null }
   ],
   bands: [
     {
@@ -84,29 +84,29 @@ export default {
       picture: imgEasy,
       charSketch: sketchEasy,
       gameImg: null,
-      audio: audioEasy,
+      audio: audioEasy
     },
     {
       name: 'Linn',
       picture: imgLinn,
       charSketch: sketchLinn,
       gameImg: null,
-      audio: audioLinn,
+      audio: audioLinn
     },
     {
       name: 'Baby',
       picture: imgBaby,
       charSketch: sketchBaby,
       gameImg: null,
-      audio: audioBaby,
+      audio: audioBaby
     },
     {
       name: 'Bottle',
       picture: imgBottle,
       charSketch: sketchBottle,
       gameImg: null,
-      audio: audioBottle,
-    },
+      audio: audioBottle
+    }
   ],
   dice: {
     active: { imgDice: imgDiceActive, imgResult: null },
@@ -117,8 +117,8 @@ export default {
       { imgDice: imgDice3, imgResult: imgResult3 },
       { imgDice: imgDice4, imgResult: imgResult4 },
       { imgDice: imgDice5, imgResult: imgResult5 },
-      { imgDice: imgDice6, imgResult: imgResult6 },
-    ],
+      { imgDice: imgDice6, imgResult: imgResult6 }
+    ]
   },
-  selectedCharacter: null,
+  selectedCharacter: null
 }

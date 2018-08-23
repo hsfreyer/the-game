@@ -3,7 +3,7 @@ import GameScreen from '../components/GameScreen'
 import { movePawn, rollDice, updateCount } from '../actions'
 
 const mapStateToProps = state => ({
-  tilePositions: state.tilePositions,
+  tiles: state.tiles,
   player: state.player,
   dice: state.dice,
   countDownSequence: state.countDown.sequence,
@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   movePawn: tile => dispatch(movePawn(tile)),
-  rollDice: () => dispatch(rollDice()),
+  rollDice: roll => dispatch(rollDice(roll)),
   updateCount: image => dispatch(updateCount(image))
 })
 

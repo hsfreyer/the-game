@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ReactTimeout from 'react-timeout'
 import styled from 'react-emotion'
 
+import { singleDice } from '../utils'
+
 import imgBackground from '../images/in-game/T_ig_background.png'
 
 import BandLogo from './BandLogo'
@@ -23,15 +25,20 @@ export default class GameScreen extends Component {
   }
 
   positionTiles() {
-    const positions = this.props.tilePositions
-    return positions.map((position, index) => {
-      return <Tile posx={position.x} posy={position.y} key={index} />
+    const tiles = this.props.tiles
+    return tiles.map((tile, index) => {
+      return <Tile posx={tile.position.x} posy={tile.position.y} key={index} />
     })
   }
   componentDidMount() {
     this.countDown(this.props.countDownSequence)
   }
 
+  pawnMovement(roll) {
+    for (let i = 0; i < roll; i++) {
+      setTimeout(() => this.props.movePawn(), 500)
+    }
+  }
   render() {
     const StyledGame = styled('div')`
       width: 100%;
@@ -52,15 +59,16 @@ export default class GameScreen extends Component {
         <Dice
           img={this.props.dice.active.imgDice}
           onClick={() => {
-            this.props.rollDice()
-            this.props.movePawn(1)
+            const roll = singleDice()
+            this.props.rollDice(roll)
+            this.pawnMovement(roll)
           }}
         />
-        <DiceResult img={this.props.dice.active.imgResult} />
         <Pawn
           posx={this.props.player.position.x}
           posy={this.props.player.position.y}
         />
+        <DiceResult img={this.props.dice.active.imgResult} />
       </StyledGame>
     )
   }
