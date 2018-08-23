@@ -19,6 +19,21 @@ import countDown2 from '../images/in-game/T_countdown_02.svg'
 import countDown3 from '../images/in-game/T_countdown_03.svg'
 import countDown4 from '../images/in-game/T_countdown_04.svg'
 
+import imgEasy from '../images/T_cm_b1_easy.png'
+import imgLinn from '../images/T_cm_b2_linn.png'
+import imgBaby from '../images/T_cm_b3_baby.png'
+import imgBottle from '../images/T_cm_b4_bottle.png'
+
+import sketchEasy from '../images/T_cm_b1_illu_easy.svg'
+import sketchLinn from '../images/T_cm_b2_illu_linn.svg'
+import sketchBaby from '../images/T_cm_b3_illu_baby.svg'
+import sketchBottle from '../images/T_cm_b4_illu_bottle.svg'
+
+import audioBaby from '../audio/CharSel/Baby Jesus - Choose a band.m4a'
+import audioEasy from '../audio/CharSel/Easy October - Choose a band.m4a'
+import audioLinn from '../audio/CharSel/Linn Koch Emmery - Choose a band.m4a'
+import audioBottle from '../audio/CharSel/Bottlecap - Choose a band.m4a'
+
 const xStart = 21
 const yStart = 20
 
@@ -28,11 +43,11 @@ export default {
     position: { x: 11, y: 11 },
     band: null,
     pawn: null,
-    roll: null
+    roll: null,
   },
   countDown: {
     sequence: [countDown1, countDown2, countDown3, countDown4],
-    image: null
+    image: null,
   },
   tilePositions: [
     { x: xStart + 2, y: yStart + 5 },
@@ -61,11 +76,38 @@ export default {
     { x: xStart + 50, y: yStart + 16 },
     { x: xStart + 46, y: yStart + 10 },
     { x: xStart + 42, y: yStart + 4 },
-    { x: xStart + 43, y: yStart - 3 }
+    { x: xStart + 43, y: yStart - 3 },
   ],
-  bands: {
-    babyJesus: { charImg: null, gameImg: null }
-  },
+  bands: [
+    {
+      name: 'Easy',
+      picture: imgEasy,
+      charSketch: sketchEasy,
+      gameImg: null,
+      audio: audioEasy,
+    },
+    {
+      name: 'Linn',
+      picture: imgLinn,
+      charSketch: sketchLinn,
+      gameImg: null,
+      audio: audioLinn,
+    },
+    {
+      name: 'Baby',
+      picture: imgBaby,
+      charSketch: sketchBaby,
+      gameImg: null,
+      audio: audioBaby,
+    },
+    {
+      name: 'Bottle',
+      picture: imgBottle,
+      charSketch: sketchBottle,
+      gameImg: null,
+      audio: audioBottle,
+    },
+  ],
   dice: {
     active: { imgDice: imgDiceActive, imgResult: null },
     result: [
@@ -75,7 +117,8 @@ export default {
       { imgDice: imgDice3, imgResult: imgResult3 },
       { imgDice: imgDice4, imgResult: imgResult4 },
       { imgDice: imgDice5, imgResult: imgResult5 },
-      { imgDice: imgDice6, imgResult: imgResult6 }
-    ]
-  }
+      { imgDice: imgDice6, imgResult: imgResult6 },
+    ],
+  },
+  selectedCharacter: null,
 }
