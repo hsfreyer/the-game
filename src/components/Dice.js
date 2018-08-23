@@ -7,7 +7,7 @@ export default class Dice extends Component {
   render() {
     const StyledHighlight = styled('img')`
       width: 34%;
-      object-fit: contain;
+      overflow: hidden;
       position: absolute;
       bottom: -19%;
       right: -9%;
@@ -15,7 +15,7 @@ export default class Dice extends Component {
 
     const StyledDice = styled('img')`
       width: 27%;
-      object-fit: contain;
+      overflow: hidden;
       position: absolute;
       bottom: -13%;
       right: -5%;

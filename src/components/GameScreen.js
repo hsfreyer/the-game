@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactTimeout from 'react-timeout'
 import styled from 'react-emotion'
 
 import imgBackground from '../images/in-game/T_ig_background.png'
@@ -37,11 +38,12 @@ export default class GameScreen extends Component {
       height: 100vh;
       background-image: url('${imgBackground}');
       background-size: cover;
+      overflow: hidden;
       display: flex;
       justify-content: center;
     `
     return (
-      <StyledGame>
+      <StyledGame className="overflow">
         <CountDown img={this.props.countDownImage} />
 
         <BandLogo />
