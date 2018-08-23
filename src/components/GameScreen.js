@@ -39,6 +39,7 @@ export default class GameScreen extends Component {
       background-image: url('${imgBackground}');
       background-size: cover;
       overflow: hidden;
+      position:relative;
       display: flex;
       justify-content: center;
     `
