@@ -24,6 +24,11 @@ import imgLinn from '../images/T_cm_b2_linn.png'
 import imgBaby from '../images/T_cm_b3_baby.png'
 import imgBottle from '../images/T_cm_b4_bottle.png'
 
+import imgLogoEasy from '../images/in-game/T_ig_logo_b1_easy.png'
+import imgLogoLinn from '../images/in-game/T_ig_logo_b2_linn.png'
+import imgLogoBaby from '../images/in-game/T_ig_logo_b3_baby.png'
+import imgLogoBottle from '../images/in-game/T_ig_logo_b4_bottle.png'
+
 import sketchEasy from '../images/T_cm_b1_illu_easy.svg'
 import sketchLinn from '../images/T_cm_b2_illu_linn.svg'
 import sketchBaby from '../images/T_cm_b3_illu_baby.svg'
@@ -127,28 +132,28 @@ export default {
       name: 'Easy',
       picture: imgEasy,
       charSketch: sketchEasy,
-      gameImg: null,
+      gameImg: imgLogoEasy,
       audio: audioEasy
     },
     {
       name: 'Linn',
       picture: imgLinn,
       charSketch: sketchLinn,
-      gameImg: null,
+      gameImg: imgLogoLinn,
       audio: audioLinn
     },
     {
       name: 'Baby',
       picture: imgBaby,
       charSketch: sketchBaby,
-      gameImg: null,
+      gameImg: imgLogoBaby,
       audio: audioBaby
     },
     {
       name: 'Bottle',
       picture: imgBottle,
       charSketch: sketchBottle,
-      gameImg: null,
+      gameImg: imgLogoBottle,
       audio: audioBottle
     }
   ],

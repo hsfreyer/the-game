@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
 
-import imgLogoEasy from '../images/in-game/T_ig_logo_b1_easy.png'
 import imgDisc from '../images/in-game/T_ig_disc.svg'
 
 export default class BandLogo extends Component {
@@ -28,7 +27,7 @@ export default class BandLogo extends Component {
           alt=" no pic here"
           className="disc-rotation"
         />
-        <StyledBandLogo src={imgLogoEasy} alt=" no pic here" />
+        <StyledBandLogo src={this.props.img} alt=" no pic here" />
       </div>
     )
   }

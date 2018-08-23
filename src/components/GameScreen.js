@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactTimeout from 'react-timeout'
 import styled from 'react-emotion'
 
 import { singleDice } from '../utils'
@@ -49,7 +48,6 @@ export default class GameScreen extends Component {
   getEventAudio() {
     const tile = this.props.player.tile || 1
     const audio = this.props.tiles[tile - 1].audio || null
-    console.log(audio)
     return audio ? audio : ' '
   }
   render() {
@@ -67,7 +65,7 @@ export default class GameScreen extends Component {
       <StyledGame className="overflow">
         <CountDown img={this.props.countDownImage} />
 
-        <BandLogo />
+        <BandLogo img={this.props.player.band.gameImg} />
         {this.positionTiles()}
         <Dice
           img={this.props.dice.active.imgDice}

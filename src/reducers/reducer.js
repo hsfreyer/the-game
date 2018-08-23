@@ -1,6 +1,4 @@
 import Actions from '../actions'
-//import _ from 'lodash'
-import { singleDice } from '../utils'
 
 export default (state, action) => {
   switch (action.type) {
@@ -49,7 +47,15 @@ export default (state, action) => {
       }
 
     case Actions.CHOOSE_CHARACTER:
-      return { ...state, selectedCharacter: action.payload }
+      return {
+        ...state,
+        player: {
+          ...state.player,
+          band: state.bands[action.payload]
+        },
+
+        selectedCharacter: state.bands[action.payload].name
+      }
     default:
       return state
   }
