@@ -5,8 +5,6 @@ import { singleDice } from '../utils'
 export default (state, action) => {
   switch (action.type) {
     case Actions.ROLL_DICE:
-      console.log(action.payload)
-
       const roll = action.payload
       return {
         ...state,

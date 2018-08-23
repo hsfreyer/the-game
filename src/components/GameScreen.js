@@ -10,11 +10,15 @@ import BandLogo from './BandLogo'
 import Dice from './Dice'
 import DiceResult from './DiceResult'
 import CountDown from './CountDown'
-
+import Event from './Event'
 import Tile from './Tile'
 import Pawn from './Pawn'
 
 export default class GameScreen extends Component {
+  componentDidMount() {
+    this.countDown(this.props.countDownSequence)
+  }
+
   countDown(images) {
     // console.log(images)
     images.forEach(image => {
@@ -30,14 +34,23 @@ export default class GameScreen extends Component {
       return <Tile posx={tile.position.x} posy={tile.position.y} key={index} />
     })
   }
-  componentDidMount() {
-    this.countDown(this.props.countDownSequence)
-  }
 
   pawnMovement(roll) {
     for (let i = 0; i < roll; i++) {
       setTimeout(() => this.props.movePawn(), 500)
     }
+  }
+
+  getEventImg() {
+    const tile = this.props.player.tile || 1
+    const event = this.props.tiles[tile - 1].event || null
+    return event ? event : ' '
+  }
+  getEventAudio() {
+    const tile = this.props.player.tile || 1
+    const audio = this.props.tiles[tile - 1].audio || null
+    console.log(audio)
+    return audio ? audio : ' '
   }
   render() {
     const StyledGame = styled('div')`
@@ -69,6 +82,7 @@ export default class GameScreen extends Component {
           posy={this.props.player.position.y}
         />
         <DiceResult img={this.props.dice.active.imgResult} />
+        <Event img={this.getEventImg()} audio={this.getEventAudio()} />
       </StyledGame>
     )
   }
