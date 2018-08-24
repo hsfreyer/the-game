@@ -1,17 +1,18 @@
 import { connect } from 'react-redux'
 import CharacterScreen from '../components/CharacterScreen'
-import { chooseCharacter } from '../actions'
+import { chooseCharacter, resetCharacterScreen } from '../actions'
 
 const mapStateToProps = state => ({
   selectedCharacter: state.selectedCharacter,
-  bands: state.bands,
+  bands: state.bands
 })
 
 const mapDispatchToProps = dispatch => ({
   chooseCharacter: character => dispatch(chooseCharacter(character)),
+  resetCharacterScreen: () => dispatch(resetCharacterScreen())
 })
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(CharacterScreen)

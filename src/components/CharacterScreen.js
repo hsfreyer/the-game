@@ -49,6 +49,10 @@ const Image = styled('img')`
 `
 
 export default class CharacterScreen extends Component {
+  componentDidMount() {
+    this.props.resetCharacterScreen()
+  }
+
   renderStartButton = () => {
     if (this.props.selectedCharacter !== null) {
       return (

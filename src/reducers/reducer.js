@@ -56,6 +56,15 @@ export default (state, action) => {
 
         selectedCharacter: state.bands[action.payload].name
       }
+    case Actions.RESET_CHARACTERSCREEN:
+      return {
+        ...state,
+        player: {
+          ...state.player,
+          band: null
+        },
+        selectedCharacter: null
+      }
     default:
       return state
   }
