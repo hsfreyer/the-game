@@ -49,6 +49,10 @@ const Image = styled('img')`
 `
 
 export default class CharacterScreen extends Component {
+  componentDidMount() {
+    this.props.resetCharacterScreen()
+  }
+
   renderStartButton = () => {
     if (this.props.selectedCharacter !== null) {
       return (
@@ -90,7 +94,7 @@ export default class CharacterScreen extends Component {
             sketch={sketchEasy}
             audio={audioEasy}
             selectedCharacter={this.props.selectedCharacter}
-            onClick={e => this.props.chooseCharacter('Easy')}
+            onClick={e => this.props.chooseCharacter(0)}
           />
           <Card
             name="Linn"
@@ -98,7 +102,7 @@ export default class CharacterScreen extends Component {
             sketch={sketchLinn}
             audio={audioLinn}
             selectedCharacter={this.props.selectedCharacter}
-            onClick={e => this.props.chooseCharacter('Linn')}
+            onClick={e => this.props.chooseCharacter(1)}
           />
           <Card
             name="Baby"
@@ -106,7 +110,7 @@ export default class CharacterScreen extends Component {
             sketch={sketchBaby}
             audio={audioBaby}
             selectedCharacter={this.props.selectedCharacter}
-            onClick={e => this.props.chooseCharacter('Baby')}
+            onClick={e => this.props.chooseCharacter(2)}
           />
           <Card
             name="Bottle"
@@ -114,7 +118,7 @@ export default class CharacterScreen extends Component {
             sketch={sketchBottle}
             audio={audioBottle}
             selectedCharacter={this.props.selectedCharacter}
-            onClick={e => this.props.chooseCharacter('Bottle')}
+            onClick={e => this.props.chooseCharacter(3)}
           />
         </CardWrapper>
         {this.renderStartButton()}
