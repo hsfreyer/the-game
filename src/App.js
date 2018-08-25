@@ -18,11 +18,18 @@ const store = createStore(
 )
 
 class App extends Component {
+  ScrollDown = () => {
+    setTimeout(function() {
+      window.scrollTo(0, 1)
+    }, 100)
+  }
+
   render() {
     return (
       <Provider store={store}>
         <Router>
           <div>
+            {this.ScrollDown()}
             <Route exact path="/" component={StartScreen} />
             <Route path={'/characters'} component={CharacterScreenView} />
             <Route path={'/game'} component={GameView} />

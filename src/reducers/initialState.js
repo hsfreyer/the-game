@@ -19,10 +19,10 @@ import countDown2 from '../images/in-game/T_countdown_02.svg'
 import countDown3 from '../images/in-game/T_countdown_03.svg'
 import countDown4 from '../images/in-game/T_countdown_04.svg'
 
-import imgEasy from '../images/T_cm_b1_easy.png'
-import imgLinn from '../images/T_cm_b2_linn.png'
-import imgBaby from '../images/T_cm_b3_baby.png'
-import imgBottle from '../images/T_cm_b4_bottle.png'
+import imgEasy from '../images/T_cm_b1_easy.jpg'
+import imgLinn from '../images/T_cm_b2_linn.jpg'
+import imgBaby from '../images/T_cm_b3_baby.jpg'
+import imgBottle from '../images/T_cm_b4_bottle.jpg'
 
 import imgLogoEasy from '../images/in-game/T_ig_logo_b1_easy.png'
 import imgLogoLinn from '../images/in-game/T_ig_logo_b2_linn.png'
@@ -64,11 +64,11 @@ export default {
     position: { x: 11, y: 11 },
     band: null,
     pawn: null,
-    roll: null
+    roll: null,
   },
   countDown: {
     sequence: [countDown1, countDown2, countDown3, countDown4],
-    image: null
+    image: null,
   },
   tiles: [
     { position: { x: xStart + 2, y: yStart + 5 }, event: null },
@@ -79,7 +79,7 @@ export default {
     {
       position: { x: xStart + 30, y: yStart + 22 },
       event: event1jung,
-      audio: audioE1
+      audio: audioE1,
     },
     { position: { x: xStart + 23, y: yStart + 23 }, event: null },
     { position: { x: xStart + 16, y: yStart + 23 }, event: null },
@@ -88,7 +88,7 @@ export default {
     {
       position: { x: xStart + 6, y: yStart + 39 },
       event: event2ride,
-      audio: audioE2
+      audio: audioE2,
     },
     { position: { x: xStart + 5, y: yStart + 47 }, event: null },
     { position: { x: xStart + 6, y: yStart + 55 }, event: null },
@@ -97,7 +97,7 @@ export default {
     {
       position: { x: xStart + 30, y: yStart + 56 },
       event: event3cruise,
-      audio: audioE3
+      audio: audioE3,
     },
     { position: { x: xStart + 37, y: yStart + 54 }, event: null },
     { position: { x: xStart + 44, y: yStart + 52 }, event: null },
@@ -105,27 +105,27 @@ export default {
     {
       position: { x: xStart + 48, y: yStart + 40 },
       event: event4backseat,
-      audio: audioE4
+      audio: audioE4,
     },
     { position: { x: xStart + 45, y: yStart + 33 }, event: null },
     { position: { x: xStart + 45, y: yStart + 25 }, event: null },
     {
       position: { x: xStart + 51.5, y: yStart + 23 },
       event: event5wodka,
-      audio: audioE5
+      audio: audioE5,
     },
     { position: { x: xStart + 50, y: yStart + 16 }, event: null },
     {
       position: { x: xStart + 46, y: yStart + 10 },
       event: event6molotow,
-      audio: audioE6
+      audio: audioE6,
     },
     { position: { x: xStart + 42, y: yStart + 4 }, event: null },
     {
       position: { x: xStart + 43, y: yStart - 3 },
       event: event7pooca,
-      audio: audioE7
-    }
+      audio: audioE7,
+    },
   ],
   bands: [
     {
@@ -133,29 +133,29 @@ export default {
       picture: imgEasy,
       charSketch: sketchEasy,
       gameImg: imgLogoEasy,
-      audio: audioEasy
+      audio: audioEasy,
     },
     {
       name: 'Linn',
       picture: imgLinn,
       charSketch: sketchLinn,
       gameImg: imgLogoLinn,
-      audio: audioLinn
+      audio: audioLinn,
     },
     {
       name: 'Baby',
       picture: imgBaby,
       charSketch: sketchBaby,
       gameImg: imgLogoBaby,
-      audio: audioBaby
+      audio: audioBaby,
     },
     {
       name: 'Bottle',
       picture: imgBottle,
       charSketch: sketchBottle,
       gameImg: imgLogoBottle,
-      audio: audioBottle
-    }
+      audio: audioBottle,
+    },
   ],
   dice: {
     active: { imgDice: imgDiceActive, imgResult: null },
@@ -166,8 +166,8 @@ export default {
       { imgDice: imgDice3, imgResult: imgResult3 },
       { imgDice: imgDice4, imgResult: imgResult4 },
       { imgDice: imgDice5, imgResult: imgResult5 },
-      { imgDice: imgDice6, imgResult: imgResult6 }
-    ]
+      { imgDice: imgDice6, imgResult: imgResult6 },
+    ],
   },
-  selectedCharacter: null
+  selectedCharacter: null,
 }
