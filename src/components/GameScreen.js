@@ -99,6 +99,7 @@ export default class GameScreen extends Component {
       display: flex;
       justify-content: center;
     `
+    // console.log(this.props.dice.active.imgDice)
     return (
       <Container>
         <Wrapper>
