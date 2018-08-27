@@ -67,7 +67,7 @@ export default {
     roll: null
   },
   countDown: {
-    sequence: [countDown1, countDown2, countDown3, countDown4],
+    sequence: [countDown1, countDown2, countDown3, countDown4, ''],
     image: null
   },
   tiles: [

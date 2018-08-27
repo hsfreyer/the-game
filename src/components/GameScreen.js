@@ -20,10 +20,10 @@ export default class GameScreen extends Component {
 
   countDown(images) {
     // console.log(images)
-    images.forEach(image => {
+    images.forEach((image, index) => {
       setTimeout(() => {
         this.props.updateCount(image)
-      }, 1000)
+      }, 1000 * index)
     })
   }
 
@@ -35,8 +35,8 @@ export default class GameScreen extends Component {
   }
 
   pawnMovement(roll) {
-    for (let i = 0; i < roll; i++) {
-      setTimeout(() => this.props.movePawn(), 500)
+    for (let i = 1; i < roll + 1; i++) {
+      setTimeout(() => this.props.movePawn(), 500 * i)
     }
   }
 
