@@ -67,8 +67,11 @@ export default {
     roll: null,
   },
   countDown: {
+<<<<<<< HEAD
     sequence: [countDown1, countDown2, countDown3, countDown4],
     image: null,
+=======
+>>>>>>> master
   },
   tiles: [
     { position: { x: xStart + 2, y: yStart + 5 }, event: null },
