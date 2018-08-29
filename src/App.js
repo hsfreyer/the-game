@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -8,8 +8,8 @@ import reducer from './reducers/reducer'
 import initialState from './reducers/initialState'
 
 import StartScreen from './components/StartScreen'
-import CharacterScreen from './components/CharacterScreen'
-import GameView from './containers/GameView'
+import CharacterScreenView from './containers/CharacterScreenView'
+import GameView from './containers/GameScreenView'
 
 const store = createStore(
   reducer,
@@ -18,15 +18,25 @@ const store = createStore(
 )
 
 class App extends Component {
+  componentDidUpdate() {
+    this.ScrollDown()
+  }
+
+  ScrollDown = () => {
+    setTimeout(function() {
+      window.scrollTo(0, 1)
+    }, 100)
+  }
+
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div>
+          <Switch>
             <Route exact path="/" component={StartScreen} />
-            <Route path="/characters" component={CharacterScreen} />
-            <Route path="/game" component={GameView} />
-          </div>
+            <Route path={'/characters'} component={CharacterScreenView} />
+            <Route path={'/game'} component={GameView} />
+          </Switch>
         </Router>
       </Provider>
     )

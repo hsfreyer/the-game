@@ -1,0 +1,55 @@
+@media (orientation: portrait) {
+  body {
+    transform: rotate(90deg);
+
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+body {
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100vw;
+  max-width: 1024px;
+  height: 100vh;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disc-rotation {
+  animation: rotation 2s infinite linear;
+}
+
+.dice-pump {
+  animation: pump 1s infinite ease-out;
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes pump {
+  from {
+    -webkit-transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0.9);
+  }
+}
