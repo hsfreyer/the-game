@@ -61,7 +61,14 @@ export default class GameScreen extends Component {
   positionTiles() {
     const tiles = this.props.tiles
     return tiles.map((tile, index) => {
-      return <Tile posx={tile.position.x} posy={tile.position.y} key={index} />
+      return (
+        <Tile
+          img={tile.img}
+          posx={tile.position.x}
+          posy={tile.position.y}
+          key={index}
+        />
+      )
     })
   }
 
@@ -71,6 +78,7 @@ export default class GameScreen extends Component {
       return (
         <GameScreenPic
           img={pic.img}
+          size={pic.size}
           posx={pic.position.x}
           posy={pic.position.y}
           key={index}

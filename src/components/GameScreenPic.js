@@ -7,7 +7,7 @@ export default class GameScreenPic extends Component {
       position: absolute;
       left: ${this.props.posx}%;
       bottom: ${this.props.posy}%;
-      width: 10%;
+      width: ${this.props.size}%;
     `
 
     return <StyledGameScreenPic src={this.props.img} alt="no pic here" />

@@ -1,3 +1,7 @@
+import imgTileStandard from '../images/in-game/T_ig_tile_standard.svg'
+import imgTilePress from '../images/in-game/T_ig_tile_press.svg'
+import imgTileHighlight from '../images/in-game/T_ig_tile_highlight.svg'
+
 import imgDiceActive from '../images/in-game/T_dice_06.svg'
 import imgDiceRoll from '../images/in-game/T_dice_mix.svg'
 import imgDice1 from '../images/in-game/T_dice_01.svg'
@@ -99,58 +103,165 @@ export default {
     image: null
   },
   tiles: [
-    { position: { x: xStart + 2, y: yStart + 5 }, event: null },
-    { position: { x: xStart + 9, y: yStart + 3 }, event: null },
-    { position: { x: xStart + 16, y: yStart + 2 }, event: null },
-    { position: { x: xStart + 21, y: yStart + 8 }, event: null },
-    { position: { x: xStart + 26, y: yStart + 14 }, event: null },
+    {
+      position: { x: xStart + 2, y: yStart + 5 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 9, y: yStart + 3 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 16, y: yStart + 2 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 21, y: yStart + 8 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 26, y: yStart + 14 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
     {
       position: { x: xStart + 30, y: yStart + 22 },
+      img: imgTileStandard,
       event: event1jung,
       audio: audioE1
     },
-    { position: { x: xStart + 23, y: yStart + 23 }, event: null },
-    { position: { x: xStart + 16, y: yStart + 23 }, event: null },
-    { position: { x: xStart + 9, y: yStart + 25 }, event: null },
-    { position: { x: xStart + 7, y: yStart + 32 }, event: null },
+    {
+      position: { x: xStart + 23, y: yStart + 23 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 16, y: yStart + 23 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 9, y: yStart + 25 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 7, y: yStart + 32 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
     {
       position: { x: xStart + 6, y: yStart + 39 },
+      img: imgTileStandard,
       event: event2ride,
       audio: audioE2
     },
-    { position: { x: xStart + 5, y: yStart + 47 }, event: null },
-    { position: { x: xStart + 6, y: yStart + 55 }, event: null },
-    { position: { x: xStart + 14, y: yStart + 59 }, event: null },
-    { position: { x: xStart + 22, y: yStart + 58 }, event: null },
+    {
+      position: { x: xStart + 5, y: yStart + 47 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 6, y: yStart + 55 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 14, y: yStart + 59 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 22, y: yStart + 58 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
     {
       position: { x: xStart + 30, y: yStart + 56 },
+      img: imgTileStandard,
       event: event3cruise,
       audio: audioE3
     },
-    { position: { x: xStart + 37, y: yStart + 54 }, event: null },
-    { position: { x: xStart + 44, y: yStart + 52 }, event: null },
-    { position: { x: xStart + 50, y: yStart + 47 }, event: null },
+    {
+      position: { x: xStart + 37, y: yStart + 54 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 44, y: yStart + 52 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 50, y: yStart + 47 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
     {
       position: { x: xStart + 48, y: yStart + 40 },
+      img: imgTileStandard,
       event: event4backseat,
       audio: audioE4
     },
-    { position: { x: xStart + 45, y: yStart + 33 }, event: null },
-    { position: { x: xStart + 45, y: yStart + 25 }, event: null },
+    {
+      position: { x: xStart + 45, y: yStart + 33 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
+    {
+      position: { x: xStart + 45, y: yStart + 25 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
     {
       position: { x: xStart + 51.5, y: yStart + 23 },
+      img: imgTileStandard,
       event: event5wodka,
       audio: audioE5
     },
-    { position: { x: xStart + 50, y: yStart + 16 }, event: null },
+    {
+      position: { x: xStart + 50, y: yStart + 16 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
     {
       position: { x: xStart + 46, y: yStart + 10 },
+      img: imgTileStandard,
       event: event6molotow,
       audio: audioE6
     },
-    { position: { x: xStart + 42, y: yStart + 4 }, event: null },
+    {
+      position: { x: xStart + 42, y: yStart + 4 },
+      img: imgTileStandard,
+      event: null,
+      audio: null
+    },
     {
       position: { x: xStart + 43, y: yStart - 3 },
+      img: imgTileStandard,
       event: event7pooca,
       audio: audioE7
     }
@@ -212,19 +323,23 @@ export default {
   gameScreenPics: [
     {
       img: aDice,
-      position: { x: 85, y: 40 }
+      position: { x: 85, y: 40 },
+      size: 10
     },
     {
       img: aDrinks,
-      position: { x: 48, y: 48 }
+      position: { x: 48, y: 48 },
+      size: 5
     },
     {
       img: aRide,
-      position: { x: 33, y: 60 }
+      position: { x: 33, y: 60 },
+      size: 5
     },
     {
       img: aSun,
-      position: { x: 45, y: 65 }
+      position: { x: 45, y: 65 },
+      size: 5
     }
   ]
 }
