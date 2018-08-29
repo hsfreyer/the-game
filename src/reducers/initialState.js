@@ -34,6 +34,11 @@ import sketchLinn from '../images/T_cm_b2_illu_linn.svg'
 import sketchBaby from '../images/T_cm_b3_illu_baby.svg'
 import sketchBottle from '../images/T_cm_b4_illu_bottle.svg'
 
+import pawnEasy from '../images/in-game/T_token_b1_easy.svg'
+import pawnLinn from '../images/in-game/T_token_b2_linn.svg'
+import pawnBaby from '../images/in-game/T_token_b3_baby.svg'
+import pawnBottle from '../images/in-game/T_token_b4_bottle.svg'
+
 import event1jung from '../images/in-game/T_e1_jung.svg'
 import event2ride from '../images/in-game/T_e2_ride.svg'
 import event3cruise from '../images/in-game/T_e3_cruise.svg'
@@ -54,6 +59,8 @@ import audioE4 from '../audio/events/Backseat Showcase.m4a'
 import audioE5 from '../audio/events/Wodka Bombe.mp3'
 import audioE6 from '../audio/events/Molotow Westside Story.m4a'
 import audioE7 from '../audio/events/Ende Finaler Sound Timetable Pooca Bar.m4a'
+
+import { singleDice } from '../utils'
 
 const xStart = 21
 const yStart = 20
@@ -133,28 +140,32 @@ export default {
       picture: imgEasy,
       charSketch: sketchEasy,
       gameImg: imgLogoEasy,
-      audio: audioEasy
+      audio: audioEasy,
+      pawn: pawnEasy
     },
     {
       name: 'Linn',
       picture: imgLinn,
       charSketch: sketchLinn,
       gameImg: imgLogoLinn,
-      audio: audioLinn
+      audio: audioLinn,
+      pawn: pawnLinn
     },
     {
       name: 'Baby',
       picture: imgBaby,
       charSketch: sketchBaby,
       gameImg: imgLogoBaby,
-      audio: audioBaby
+      audio: audioBaby,
+      pawn: pawnBaby
     },
     {
       name: 'Bottle',
       picture: imgBottle,
       charSketch: sketchBottle,
       gameImg: imgLogoBottle,
-      audio: audioBottle
+      audio: audioBottle,
+      pawn: pawnBottle
     }
   ],
   dice: {
