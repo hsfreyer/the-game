@@ -12,11 +12,10 @@ import StartScreen from './components/StartScreen'
 import CharacterScreenView from './containers/CharacterScreenView'
 import GameView from './containers/GameScreenView'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   reducer,
-  getInitialState(),
-  composeEnhancers(applyMiddleware(useLocalStorage))
+  initialState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 class App extends Component {
