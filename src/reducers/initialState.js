@@ -268,8 +268,8 @@ export default {
   ],
   bands: [
     {
-      name: 'Easy',
-      picture: imgEasy,
+      name: 'easy',
+      charPicture: imgEasy,
       charSketch: sketchEasy,
       gameImg: imgLogoEasy,
       audio: audioEasy,
@@ -277,8 +277,8 @@ export default {
       pawn: pawnEasy
     },
     {
-      name: 'Linn',
-      picture: imgLinn,
+      name: 'linn',
+      charPicture: imgLinn,
       charSketch: sketchLinn,
       gameImg: imgLogoLinn,
       audio: audioLinn,
@@ -287,8 +287,8 @@ export default {
       pawn: pawnLinn
     },
     {
-      name: 'Baby',
-      picture: imgBaby,
+      name: 'baby',
+      charPicture: imgBaby,
       charSketch: sketchBaby,
       gameImg: imgLogoBaby,
       audio: audioBaby,
@@ -297,8 +297,8 @@ export default {
       pawn: pawnBaby
     },
     {
-      name: 'Bottle',
-      picture: imgBottle,
+      name: 'bottle',
+      charPicture: imgBottle,
       charSketch: sketchBottle,
       gameImg: imgLogoBottle,
       audio: audioBottle,

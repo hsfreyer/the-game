@@ -4,7 +4,8 @@ import { chooseCharacter, resetCharacterScreen } from '../actions'
 
 const mapStateToProps = state => ({
   selectedCharacter: state.selectedCharacter,
-  bands: state.bands
+  bands: state.bands,
+  player: state.player
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -6,44 +6,27 @@ export default class Card extends Component {
     const {
       picture,
       sketch,
-      audio,
       name,
+      area,
       selectedCharacter,
       onClick
     } = this.props
 
-    const Wrapper = styled('div')`
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    `
-
     const CharacterCard = styled('img')`
-      height: 100%;
-      margin-bottom: 0;
+      max-width: 80%;
+      grid-area: ${name};
       transform: ${selectedCharacter === name
         ? 'rotate(5deg) scale(1.2)'
         : 'rotate(0deg) scale(1)'};
     `
 
     if (selectedCharacter === name) {
-      return (
-        <Wrapper>
-          <CharacterCard src={sketch} onClick={e => onClick()} />
-          <audio src={audio} autoPlay="false" />
-        </Wrapper>
-      )
+      return <CharacterCard src={sketch} onClick={e => onClick()} />
     } else {
-      return (
-        <Wrapper>
-          <CharacterCard src={picture} onClick={e => onClick()} />
-        </Wrapper>
-      )
+      return <CharacterCard src={picture} onClick={e => onClick()} />
     }
   }
   render() {
-    return <div>{this.autoplayCard()}</div>
+    return this.autoplayCard()
   }
 }

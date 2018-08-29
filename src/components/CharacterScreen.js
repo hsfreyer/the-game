@@ -42,27 +42,23 @@ const Wrapper = styled('div')`
 max-width: 1024px;
 height: 100vh;
 max-height: 600px;
-background: url('${backgroundImage}') no-repeat center center;
+padding: 2%;
+background: url('${backgroundImage}') ;
 background-size: contain;  
-`
-const CardWrapper = styled('div')`
-  width: 100%;
-  height: 75%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-`
-
-const ImageWrapper = styled('div')`
-  height: 25%;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 2rem;
+display: grid;
+grid-gap: 0.5rem;
+grid-template-rows: 5fr 2fr;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-areas: 
+'easy linn baby bottle'
+'. . . start';
+justify-items:center;
+align-items: center;
 `
 
-const Image = styled('img')`
-  width: 15%;
+const StartButton = styled('div')`
+  min-width: 80%;
+  grid-area: start;
 `
 
 const Text = styled('p')`
@@ -90,75 +86,47 @@ export default class CharacterScreen extends Component {
     this.props.resetCharacterScreen()
   }
 
+  renderCards() {
+    const bands = this.props.bands
+    return bands.map((band, index) => {
+      return (
+        <Card
+          name={band.name}
+          picture={band.charPicture}
+          sketch={band.charSketch}
+          selectedCharacter={this.props.selectedCharacter}
+          onClick={() => this.props.chooseCharacter(index)}
+        />
+      )
+    })
+  }
+
   renderStartButton = () => {
     if (this.props.selectedCharacter !== null) {
       return (
-        <Link to="/game">
-          <ImageWrapper>
-            <Image src={BtnStart} alt="" />
-          </ImageWrapper>
-        </Link>
+        <StartButton>
+          <Link to="/game">
+            <img src={BtnStart} alt="" />
+          </Link>
+        </StartButton>
       )
     } else {
       return (
-        <ImageWrapper>
-          <Image src={BtnStart} alt="" />
-        </ImageWrapper>
+        <StartButton>
+          <img src={BtnStart} alt="" />
+        </StartButton>
       )
     }
   }
-  // renderCards = () => {
-  //   this.props.bands.map(band => {
-  //     return (
-  //       <Card
-  //         name={band.name}
-  //         picture={band.picture}
-  //         sketch={band.sketch}
-  //         audio={band.audio}
-  //         selectedCharacter={this.props.selectedCharacter}
-  //         onClick={e => this.props.chooseCharacter(`${band.name}`)}
-  //       />
-  //     )
-  //   })
-  // }
+
   render() {
     return (
       <div className="container">
         <Wrapper>
-          <CardWrapper>
-            <Card
-              name="Easy"
-              picture={imgEasy}
-              sketch={sketchEasy}
-              audio={audioEasy}
-              selectedCharacter={this.props.selectedCharacter}
-              onClick={() => this.props.chooseCharacter(0)}
-            />
-            <Card
-              name="Linn"
-              picture={imgLinn}
-              sketch={sketchLinn}
-              audio={audioLinn}
-              selectedCharacter={this.props.selectedCharacter}
-              onClick={() => this.props.chooseCharacter(1)}
-            />
-            <Card
-              name="Baby"
-              picture={imgBaby}
-              sketch={sketchBaby}
-              audio={audioBaby}
-              selectedCharacter={this.props.selectedCharacter}
-              onClick={() => this.props.chooseCharacter(2)}
-            />
-            <Card
-              name="Bottle"
-              picture={imgBottle}
-              sketch={sketchBottle}
-              audio={audioBottle}
-              selectedCharacter={this.props.selectedCharacter}
-              onClick={() => this.props.chooseCharacter(3)}
-            />
-          </CardWrapper>
+          {this.renderCards()}
+          {this.props.player.band !== null ? (
+            <audio src={this.props.player.band.audio} autoPlay />
+          ) : null}
           {this.renderStartButton()}
         </Wrapper>
         <SecondWrapper>
