@@ -3,7 +3,7 @@ import styled from 'react-emotion'
 
 import { singleDice } from '../utils'
 
-import imgBackground from '../images/in-game/T_ig_background.png'
+import imgBackground from '../images/in-game/T_ig_background.jpg'
 
 import BandLogo from './BandLogo'
 import Dice from './Dice'
@@ -12,6 +12,44 @@ import CountDown from './CountDown'
 import Event from './Event'
 import Tile from './Tile'
 import Pawn from './Pawn'
+
+import smartphone from '../images/smartphone.svg'
+
+const Container = styled('div')`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`
+
+const Wrapper = styled('div')`
+  @media (orientation: portrait) {
+    display: none;
+  }
+  width: 100vw;
+  height: 100vh;
+`
+
+const Text = styled('p')`
+  @media (orientation: landscape) {
+    display: none;
+  }
+  color: white;
+  font-family: arial;
+  font-size: 1.2rem;
+  transform: rotate(-90deg);
+  margin-left: 2rem;
+`
+const SecondWrapper = styled('div')`
+  @media (orientation: landscape) {
+    display: none;
+  }
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`
 
 export default class GameScreen extends Component {
   componentDidMount() {
@@ -61,27 +99,36 @@ export default class GameScreen extends Component {
       display: flex;
       justify-content: center;
     `
+    // console.log(this.props.dice.active.imgDice)
     return (
-      <StyledGame className="overflow">
-        <CountDown img={this.props.countDownImage} />
+      <Container>
+        <Wrapper>
+          <StyledGame className="overflow">
+            <CountDown img={this.props.countDownImage} />
 
-        <BandLogo img={this.props.player.band.gameImg} />
-        {this.positionTiles()}
-        <Dice
-          img={this.props.dice.active.imgDice}
-          onClick={() => {
-            const roll = singleDice()
-            this.props.rollDice(roll)
-            this.pawnMovement(roll)
-          }}
-        />
-        <Pawn
-          posx={this.props.player.position.x}
-          posy={this.props.player.position.y}
-        />
-        <DiceResult img={this.props.dice.active.imgResult} />
-        <Event img={this.getEventImg()} audio={this.getEventAudio()} />
-      </StyledGame>
+            <BandLogo img={this.props.player.band.gameImg} />
+            {this.positionTiles()}
+            <Dice
+              img={this.props.dice.active.imgDice}
+              onClick={() => {
+                const roll = singleDice()
+                this.props.rollDice(roll)
+                this.pawnMovement(roll)
+              }}
+            />
+            <Pawn
+              posx={this.props.player.position.x}
+              posy={this.props.player.position.y}
+            />
+            <DiceResult img={this.props.dice.active.imgResult} />
+            <Event img={this.getEventImg()} audio={this.getEventAudio()} />
+          </StyledGame>
+        </Wrapper>
+        <SecondWrapper>
+          <Text>This game is displayed in landscape mode only </Text>
+          <img src={smartphone} />>
+        </SecondWrapper>
+      </Container>
     )
   }
 }

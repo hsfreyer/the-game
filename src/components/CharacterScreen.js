@@ -2,15 +2,17 @@ import React, { Component } from 'react'
 import styled from 'react-emotion'
 import { Link } from 'react-router-dom'
 
-import backgroundImage from '../images/T_CharacterMenu_background.png'
+import smartphone from '../images/smartphone.svg'
+
+import backgroundImage from '../images/T_CharacterMenu_background.jpg'
 import BtnStart from '../images/bttn_start_on.svg'
 // import BtnStartPress from '../images/bttn_start_press.svg'
 import Card from './Card'
 
-import imgEasy from '../images/T_cm_b1_easy.png'
-import imgLinn from '../images/T_cm_b2_linn.png'
-import imgBaby from '../images/T_cm_b3_baby.png'
-import imgBottle from '../images/T_cm_b4_bottle.png'
+import imgEasy from '../images/T_cm_b1_easy.jpg'
+import imgLinn from '../images/T_cm_b2_linn.jpg'
+import imgBaby from '../images/T_cm_b3_baby.jpg'
+import imgBottle from '../images/T_cm_b4_bottle.jpg'
 
 import sketchEasy from '../images/T_cm_b1_illu_easy.svg'
 import sketchLinn from '../images/T_cm_b2_illu_linn.svg'
@@ -25,8 +27,19 @@ import audioBottle from '../audio/CharSel/Bottlecap - Choose a band.m4a'
 const Container = styled('div')`
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`
+
+const Wrapper = styled('div')`
+@media (orientation: portrait) {
+    display: none;
+}
+  width: 100vw;
+  height: 100vh;
   background-image: url('${backgroundImage}');
-  background-size: cover;
+  background-size: 100% 100%;
   
 `
 const CardWrapper = styled('div')`
@@ -46,6 +59,26 @@ const ImageWrapper = styled('div')`
 
 const Image = styled('img')`
   width: 20%;
+`
+
+const Text = styled('p')`
+  @media (orientation: landscape) {
+    display: none;
+  }
+  color: white;
+  font-family: arial;
+  font-size: 1.2rem;
+  transform: rotate(-90deg);
+  margin-left: 2rem;
+`
+const SecondWrapper = styled('div')`
+  @media (orientation: landscape) {
+    display: none;
+  }
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 `
 
 export default class CharacterScreen extends Component {
@@ -87,41 +120,47 @@ export default class CharacterScreen extends Component {
   render() {
     return (
       <Container>
-        <CardWrapper>
-          <Card
-            name="Easy"
-            picture={imgEasy}
-            sketch={sketchEasy}
-            audio={audioEasy}
-            selectedCharacter={this.props.selectedCharacter}
-            onClick={e => this.props.chooseCharacter(0)}
-          />
-          <Card
-            name="Linn"
-            picture={imgLinn}
-            sketch={sketchLinn}
-            audio={audioLinn}
-            selectedCharacter={this.props.selectedCharacter}
-            onClick={e => this.props.chooseCharacter(1)}
-          />
-          <Card
-            name="Baby"
-            picture={imgBaby}
-            sketch={sketchBaby}
-            audio={audioBaby}
-            selectedCharacter={this.props.selectedCharacter}
-            onClick={e => this.props.chooseCharacter(2)}
-          />
-          <Card
-            name="Bottle"
-            picture={imgBottle}
-            sketch={sketchBottle}
-            audio={audioBottle}
-            selectedCharacter={this.props.selectedCharacter}
-            onClick={e => this.props.chooseCharacter(3)}
-          />
-        </CardWrapper>
-        {this.renderStartButton()}
+        <Wrapper>
+          <CardWrapper>
+            <Card
+              name="Easy"
+              picture={imgEasy}
+              sketch={sketchEasy}
+              audio={audioEasy}
+              selectedCharacter={this.props.selectedCharacter}
+              onClick={e => this.props.chooseCharacter(0)}
+            />
+            <Card
+              name="Linn"
+              picture={imgLinn}
+              sketch={sketchLinn}
+              audio={audioLinn}
+              selectedCharacter={this.props.selectedCharacter}
+              onClick={e => this.props.chooseCharacter(1)}
+            />
+            <Card
+              name="Baby"
+              picture={imgBaby}
+              sketch={sketchBaby}
+              audio={audioBaby}
+              selectedCharacter={this.props.selectedCharacter}
+              onClick={e => this.props.chooseCharacter(2)}
+            />
+            <Card
+              name="Bottle"
+              picture={imgBottle}
+              sketch={sketchBottle}
+              audio={audioBottle}
+              selectedCharacter={this.props.selectedCharacter}
+              onClick={e => this.props.chooseCharacter(3)}
+            />
+          </CardWrapper>
+          {this.renderStartButton()}
+        </Wrapper>
+        <SecondWrapper>
+          <Text>This game is displayed in landscape mode only </Text>
+          <img src={smartphone} />>
+        </SecondWrapper>
       </Container>
     )
   }
