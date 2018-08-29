@@ -67,6 +67,7 @@ const yStart = 20
 
 export default {
   player: {
+    tile: null,
     position: { x: 11, y: 11 },
     band: null,
     roll: null,
@@ -135,15 +136,7 @@ export default {
   ],
   bands: [
     {
-      name: 'Bobo',
-      picture: imgEasy,
-      charSketch: sketchEasy,
-      gameImg: imgLogoEasy,
-      audio: audioEasy,
-      pawn: pawnEasy
-    },
-    {
-      name: 'Bibi',
+      name: 'Easy',
       picture: imgEasy,
       charSketch: sketchEasy,
       gameImg: imgLogoEasy,
