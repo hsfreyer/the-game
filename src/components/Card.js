@@ -9,17 +9,18 @@ export default class Card extends Component {
       audio,
       name,
       selectedCharacter,
-      onClick,
+      onClick
     } = this.props
 
     const Wrapper = styled('div')`
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
     `
 
     const CharacterCard = styled('img')`
-      height: 60vh;
+      width: 70%;
       margin-bottom: 0;
       transform: ${selectedCharacter === name
         ? 'rotate(5deg) scale(1.2)'

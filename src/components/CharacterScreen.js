@@ -28,7 +28,7 @@ const Container = styled('div')`
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 `
 
@@ -37,16 +37,18 @@ const Wrapper = styled('div')`
     display: none;
 }
   width: 100vw;
-  height: 100vh;
-  background-image: url('${backgroundImage}');
-  background-size: 100% 100%;
-  
+max-width: 1024px;
+height: 100vh;
+max-height: 600px;
+background: url('${backgroundImage}') no-repeat center center fixed;
+background-size: contain;  
 `
 const CardWrapper = styled('div')`
+  width: 100%;
   height: 75%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 `
 
