@@ -5,22 +5,24 @@ import { Link } from 'react-router-dom'
 import smartphone from '../images/smartphone.svg'
 
 const Container = styled('div')`
-  width: 100vw;
+  width: auto;
+  max-width: 1024px;
   height: 100vh;
+  max-height: 600px;
+  background: url('${titleScreen}') no-repeat center center fixed;
+  background-size: contain;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 `
 
 const Wrapper = styled('div')`
-@media (orientation: portrait) {
+  @media (orientation: portrait) {
     display: none;
-    
-}
-  width: 100%;
+  }
+  width: auto;
   height: 100%;
-  background-image: url('${titleScreen}');
-  background-size: cover;
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
