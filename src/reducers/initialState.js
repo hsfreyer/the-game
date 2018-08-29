@@ -323,23 +323,43 @@ export default {
   gameScreenPics: [
     {
       img: aDice,
-      position: { x: 85, y: 40 },
-      size: 10
+      position: { x: 85, y: 39 },
+      size: 12
     },
     {
       img: aDrinks,
       position: { x: 48, y: 48 },
-      size: 5
+      size: 7
     },
     {
       img: aRide,
       position: { x: 33, y: 60 },
-      size: 5
+      size: 6
     },
     {
       img: aSun,
-      position: { x: 45, y: 65 },
-      size: 5
+      position: { x: 45, y: 66 },
+      size: 8
+    },
+    {
+      img: aShow,
+      position: { x: 57, y: 60 },
+      size: 13
+    },
+    {
+      img: aLevel,
+      position: { x: 78, y: 45 },
+      size: 6
+    },
+    {
+      img: aMolotow,
+      position: { x: 60, y: 32 },
+      size: 9
+    },
+    {
+      img: aPooca,
+      position: { x: 62, y: 8 },
+      size: 9
     }
   ]
 }
