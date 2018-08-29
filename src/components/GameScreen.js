@@ -15,20 +15,12 @@ import Pawn from './Pawn'
 
 import smartphone from '../images/smartphone.svg'
 
-const Container = styled('div')`
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`
-
 const Wrapper = styled('div')`
   @media (orientation: portrait) {
     display: none;
   }
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 `
 
 const Text = styled('p')`
@@ -91,17 +83,18 @@ export default class GameScreen extends Component {
   render() {
     const StyledGame = styled('div')`
       width: 100%;
-      height: 100vh;
+      height: 100%;
       background-image: url('${imgBackground}');
       background-size: cover;
       overflow: hidden;
       position:relative;
       display: flex;
       justify-content: center;
+      align-items: center;
     `
     // console.log(this.props.dice.active.imgDice)
     return (
-      <Container>
+      <div className="container">
         <Wrapper>
           <StyledGame className="overflow">
             <CountDown img={this.props.countDownImage} />
@@ -129,7 +122,7 @@ export default class GameScreen extends Component {
           <Text>This game is displayed in landscape mode only </Text>
           <img src={smartphone} alt="" />>
         </SecondWrapper>
-      </Container>
+      </div>
     )
   }
 }

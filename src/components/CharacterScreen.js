@@ -40,7 +40,7 @@ const Wrapper = styled('div')`
 max-width: 1024px;
 height: 100vh;
 max-height: 600px;
-background: url('${backgroundImage}') no-repeat center center fixed;
+background: url('${backgroundImage}') no-repeat center center;
 background-size: contain;  
 `
 const CardWrapper = styled('div')`
@@ -121,7 +121,7 @@ export default class CharacterScreen extends Component {
   // }
   render() {
     return (
-      <Container>
+      <div className="container">
         <Wrapper>
           <CardWrapper>
             <Card
@@ -161,9 +161,9 @@ export default class CharacterScreen extends Component {
         </Wrapper>
         <SecondWrapper>
           <Text>This game is displayed in landscape mode only </Text>
-          <img src={smartphone} />>
+          <img src={smartphone} alt="" />
         </SecondWrapper>
-      </Container>
+      </div>
     )
   }
 }

@@ -69,7 +69,14 @@ export default {
   player: {
     tile: null,
     position: { x: 11, y: 11 },
-    band: null,
+    band: {
+      name: 'Easy',
+      picture: imgEasy,
+      charSketch: sketchEasy,
+      gameImg: imgLogoEasy,
+      audio: audioEasy,
+      pawn: pawnEasy
+    },
     roll: null,
     pawn: null
   },

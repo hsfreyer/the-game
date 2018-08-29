@@ -1,28 +1,19 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
+
+import Container from './Container'
 import titleScreen from '../images/T_TitleScreen.jpg'
 import { Link } from 'react-router-dom'
 import smartphone from '../images/smartphone.svg'
-
-const Container = styled('div')`
-  width: auto;
-  max-width: 1024px;
-  height: 100vh;
-  max-height: 600px;
-  background: url('${titleScreen}') no-repeat center center fixed;
-  background-size: contain;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`
 
 const Wrapper = styled('div')`
   @media (orientation: portrait) {
     display: none;
   }
-  width: auto;
+  width: 100%;
   height: 100%;
-
+  background: url('${titleScreen}') no-repeat center center ;
+  background-size: contain  ;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -60,7 +51,7 @@ const Text = styled('p')`
 export default class StartScreen extends Component {
   render() {
     return (
-      <Container>
+      <div className="container">
         <Wrapper>
           <Link style={{ textDecoration: 'none' }} to="/characters">
             <StyledLink />
@@ -68,9 +59,9 @@ export default class StartScreen extends Component {
         </Wrapper>
         <SecondWrapper>
           <Text>This game is displayed in landscape mode only </Text>
-          <img src={smartphone} />
+          <img src={smartphone} alt="" />
         </SecondWrapper>
-      </Container>
+      </div>
     )
   }
 }

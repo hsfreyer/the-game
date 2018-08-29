@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { useLocalStorage } from './middleware'
 
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 import reducer from './reducers/reducer'
@@ -41,15 +40,6 @@ class App extends Component {
         </Router>
       </Provider>
     )
-  }
-}
-
-function getInitialState() {
-  const savedState = localStorage.getItem('state')
-  if (savedState) {
-    return JSON.parse(savedState)
-  } else {
-    return initialState
   }
 }
 
