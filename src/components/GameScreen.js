@@ -3,7 +3,7 @@ import styled from 'react-emotion'
 
 import { singleDice } from '../utils'
 
-import imgBackground from '../images/in-game/T_ig_background_02.png'
+import imgBackground from '../images/T_ig_background_clean.png'
 
 import BandLogo from './BandLogo'
 import Dice from './Dice'

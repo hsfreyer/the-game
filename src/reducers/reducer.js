@@ -47,7 +47,6 @@ export default (state, action) => {
       }
 
     case Actions.CHOOSE_CHARACTER:
-      console.log(state.bands[action.payload.band])
       return {
         ...state,
         player: {
