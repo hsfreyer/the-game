@@ -3,7 +3,7 @@ import styled from 'react-emotion'
 
 import { singleDice } from '../utils'
 
-import imgBackground from '../images/in-game/T_ig_background.jpg'
+import imgBackground from '../images/in-game/T_ig_background_02.png'
 
 import BandLogo from './BandLogo'
 import Dice from './Dice'
@@ -11,6 +11,7 @@ import DiceResult from './DiceResult'
 import CountDown from './CountDown'
 import Event from './Event'
 import Tile from './Tile'
+import GameScreenPic from './GameScreenPic'
 import Pawn from './Pawn'
 
 import smartphone from '../images/smartphone.svg'
@@ -64,6 +65,20 @@ export default class GameScreen extends Component {
     })
   }
 
+  positionPics() {
+    const pics = this.props.pics
+    return pics.map((pic, index) => {
+      return (
+        <GameScreenPic
+          img={pic.img}
+          posx={pic.position.x}
+          posy={pic.position.y}
+          key={index}
+        />
+      )
+    })
+  }
+
   pawnMovement(roll) {
     for (let i = 1; i < roll + 1; i++) {
       setTimeout(() => this.props.movePawn(), 500 * i)
@@ -96,11 +111,14 @@ export default class GameScreen extends Component {
     return (
       <div className="container">
         <Wrapper>
+          <audio src={this.props.player.band.song} autoPlay repeat="true" />
+
           <StyledGame className="overflow">
             <CountDown img={this.props.countDownImage} />
 
             <BandLogo img={this.props.player.band.gameImg} />
             {this.positionTiles()}
+            {this.positionPics()}
             <Dice
               img={this.props.dice.active.imgDice}
               onClick={() => {

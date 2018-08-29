@@ -19,20 +19,20 @@ import countDown2 from '../images/in-game/T_countdown_02.svg'
 import countDown3 from '../images/in-game/T_countdown_03.svg'
 import countDown4 from '../images/in-game/T_countdown_04.svg'
 
-import imgEasy from '../images/T_cm_b1_easy.jpg'
-import imgLinn from '../images/T_cm_b2_linn.jpg'
-import imgBaby from '../images/T_cm_b3_baby.jpg'
-import imgBottle from '../images/T_cm_b4_bottle.jpg'
+import imgEasy from '../images/char-sel/T_cm_b1_easy.jpg'
+import imgLinn from '../images/char-sel/T_cm_b2_linn.jpg'
+import imgBaby from '../images/char-sel/T_cm_b3_baby.jpg'
+import imgBottle from '../images/char-sel/T_cm_b4_bottle.jpg'
 
 import imgLogoEasy from '../images/in-game/T_ig_logo_b1_easy.png'
 import imgLogoLinn from '../images/in-game/T_ig_logo_b2_linn.png'
 import imgLogoBaby from '../images/in-game/T_ig_logo_b3_baby.png'
 import imgLogoBottle from '../images/in-game/T_ig_logo_b4_bottle.png'
 
-import sketchEasy from '../images/T_cm_b1_illu_easy.svg'
-import sketchLinn from '../images/T_cm_b2_illu_linn.svg'
-import sketchBaby from '../images/T_cm_b3_illu_baby.svg'
-import sketchBottle from '../images/T_cm_b4_illu_bottle.svg'
+import sketchEasy from '../images/char-sel/T_cm_b1_illu_easy.svg'
+import sketchLinn from '../images/char-sel/T_cm_b2_illu_linn.svg'
+import sketchBaby from '../images/char-sel/T_cm_b3_illu_baby.svg'
+import sketchBottle from '../images/char-sel/T_cm_b4_illu_bottle.svg'
 
 import pawnEasy from '../images/in-game/T_token_b1_easy.svg'
 import pawnLinn from '../images/in-game/T_token_b2_linn.svg'
@@ -52,6 +52,11 @@ import audioEasy from '../audio/CharSel/Easy October - Choose a band.m4a'
 import audioLinn from '../audio/CharSel/Linn Koch Emmery - Choose a band.m4a'
 import audioBottle from '../audio/CharSel/Bottlecap - Choose a band.m4a'
 
+import songBaby from '../audio/in-game/baby_in-game.mp3'
+import songBottle from '../audio/in-game/bottle_in-game.mp3'
+import songEasy from '../audio/in-game/easy_in-game.mp3'
+import songLinn from '../audio/in-game/linn_in-game.mp3'
+
 import audioE1 from '../audio/events/audioE1.m4a'
 import audioE2 from '../audio/events/Backseat Ride Bicycle.wav'
 import audioE3 from '../audio/events/Cruise Liner Final.m4a'
@@ -59,6 +64,15 @@ import audioE4 from '../audio/events/Backseat Showcase.m4a'
 import audioE5 from '../audio/events/Wodka Bombe.mp3'
 import audioE6 from '../audio/events/Molotow Westside Story.m4a'
 import audioE7 from '../audio/events/Ende Finaler Sound Timetable Pooca Bar.m4a'
+
+import aDice from '../images/in-game/arrow_dice.png'
+import aDrinks from '../images/in-game/arrow_drinks.png'
+import aLevel from '../images/in-game/arrow_level.png'
+import aMolotow from '../images/in-game/arrow_molotow.png'
+import aPooca from '../images/in-game/arrow_pooca.png'
+import aRide from '../images/in-game/arrow_ride.png'
+import aShow from '../images/in-game/arrow_show.png'
+import aSun from '../images/in-game/arrow_sun.png'
 
 import { singleDice } from '../utils'
 
@@ -148,6 +162,7 @@ export default {
       charSketch: sketchEasy,
       gameImg: imgLogoEasy,
       audio: audioEasy,
+      song: songEasy,
       pawn: pawnEasy
     },
     {
@@ -156,6 +171,8 @@ export default {
       charSketch: sketchLinn,
       gameImg: imgLogoLinn,
       audio: audioLinn,
+      song: songLinn,
+
       pawn: pawnLinn
     },
     {
@@ -164,6 +181,8 @@ export default {
       charSketch: sketchBaby,
       gameImg: imgLogoBaby,
       audio: audioBaby,
+      song: songBaby,
+
       pawn: pawnBaby
     },
     {
@@ -172,6 +191,8 @@ export default {
       charSketch: sketchBottle,
       gameImg: imgLogoBottle,
       audio: audioBottle,
+      song: songBottle,
+
       pawn: pawnBottle
     }
   ],
@@ -187,5 +208,23 @@ export default {
       { imgDice: imgDice6, imgResult: imgResult6 }
     ]
   },
-  selectedCharacter: null
+  selectedCharacter: null,
+  gameScreenPics: [
+    {
+      img: aDice,
+      position: { x: 85, y: 40 }
+    },
+    {
+      img: aDrinks,
+      position: { x: 48, y: 48 }
+    },
+    {
+      img: aRide,
+      position: { x: 33, y: 60 }
+    },
+    {
+      img: aSun,
+      position: { x: 45, y: 65 }
+    }
+  ]
 }

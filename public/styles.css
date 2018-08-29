@@ -1,6 +1,5 @@
 @media (orientation: portrait) {
-  body,
-  .force-orientation {
+  body {
     transform: rotate(90deg);
 
     overflow: hidden;

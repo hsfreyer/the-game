@@ -13,6 +13,7 @@ export default class Card extends Component {
     } = this.props
 
     const Wrapper = styled('div')`
+      height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -20,7 +21,7 @@ export default class Card extends Component {
     `
 
     const CharacterCard = styled('img')`
-      width: 70%;
+      height: 100%;
       margin-bottom: 0;
       transform: ${selectedCharacter === name
         ? 'rotate(5deg) scale(1.2)'

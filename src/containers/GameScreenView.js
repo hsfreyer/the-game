@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
   player: state.player,
   dice: state.dice,
   countDownSequence: state.countDown.sequence,
-  countDownImage: state.countDown.image
+  countDownImage: state.countDown.image,
+  pics: state.gameScreenPics
 })
 
 const mapDispatchToProps = dispatch => ({

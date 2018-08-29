@@ -4,20 +4,20 @@ import { Link } from 'react-router-dom'
 
 import smartphone from '../images/smartphone.svg'
 
-import backgroundImage from '../images/T_CharacterMenu_background.jpg'
-import BtnStart from '../images/bttn_start_on.svg'
+import backgroundImage from '../images/char-sel/T_CharacterMenu_background.jpg'
+import BtnStart from '../images/char-sel/bttn_start_on.svg'
 // import BtnStartPress from '../images/bttn_start_press.svg'
 import Card from './Card'
 
-import imgEasy from '../images/T_cm_b1_easy.jpg'
-import imgLinn from '../images/T_cm_b2_linn.jpg'
-import imgBaby from '../images/T_cm_b3_baby.jpg'
-import imgBottle from '../images/T_cm_b4_bottle.jpg'
+import imgEasy from '../images/char-sel/T_cm_b1_easy.jpg'
+import imgLinn from '../images/char-sel/T_cm_b2_linn.jpg'
+import imgBaby from '../images/char-sel/T_cm_b3_baby.jpg'
+import imgBottle from '../images/char-sel/T_cm_b4_bottle.jpg'
 
-import sketchEasy from '../images/T_cm_b1_illu_easy.svg'
-import sketchLinn from '../images/T_cm_b2_illu_linn.svg'
-import sketchBaby from '../images/T_cm_b3_illu_baby.svg'
-import sketchBottle from '../images/T_cm_b4_illu_bottle.svg'
+import sketchEasy from '../images/char-sel/T_cm_b1_illu_easy.svg'
+import sketchLinn from '../images/char-sel/T_cm_b2_illu_linn.svg'
+import sketchBaby from '../images/char-sel/T_cm_b3_illu_baby.svg'
+import sketchBottle from '../images/char-sel/T_cm_b4_illu_bottle.svg'
 
 import audioBaby from '../audio/CharSel/Baby Jesus - Choose a band.m4a'
 import audioEasy from '../audio/CharSel/Easy October - Choose a band.m4a'
@@ -48,7 +48,7 @@ const CardWrapper = styled('div')`
   height: 75%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 `
 
