@@ -6,25 +6,10 @@ import { Link } from 'react-router-dom'
 import smartphone from '../images/smartphone.svg'
 
 import backgroundImage from '../images/char-sel/T_CharacterMenu_background.jpg'
-import BtnStart from '../images/char-sel/bttn_start_on.svg'
-// import BtnStartPress from '../images/bttn_start_press.svg'
+import BtnStartStandard from '../images/char-sel/bttn_start_on.svg'
+import BtnStartPress from '../images/char-sel/bttn_start_press.svg'
 
 import Card from './Card'
-
-import imgEasy from '../images/char-sel/T_cm_b1_easy.jpg'
-import imgLinn from '../images/char-sel/T_cm_b2_linn.jpg'
-import imgBaby from '../images/char-sel/T_cm_b3_baby.jpg'
-import imgBottle from '../images/char-sel/T_cm_b4_bottle.jpg'
-
-import sketchEasy from '../images/char-sel/T_cm_b1_illu_easy.svg'
-import sketchLinn from '../images/char-sel/T_cm_b2_illu_linn.svg'
-import sketchBaby from '../images/char-sel/T_cm_b3_illu_baby.svg'
-import sketchBottle from '../images/char-sel/T_cm_b4_illu_bottle.svg'
-
-import audioBaby from '../audio/CharSel/Baby Jesus - Choose a band.m4a'
-import audioEasy from '../audio/CharSel/Easy October - Choose a band.m4a'
-import audioLinn from '../audio/CharSel/Linn Koch Emmery - Choose a band.m4a'
-import audioBottle from '../audio/CharSel/Bottlecap - Choose a band.m4a'
 
 const Container = styled('div')`
   width: 100vw;
@@ -86,6 +71,12 @@ export default class CharacterScreen extends Component {
     this.props.resetCharacterScreen()
   }
 
+  timedReset() {
+    setTimeout(() => {
+      this.props.resetCharacterScreen()
+    }, 10000)
+  }
+
   renderCards() {
     const bands = this.props.bands
     return bands.map((band, index) => {
@@ -95,7 +86,10 @@ export default class CharacterScreen extends Component {
           picture={band.charPicture}
           sketch={band.charSketch}
           selectedCharacter={this.props.selectedCharacter}
-          onClick={() => this.props.chooseCharacter(index)}
+          onClick={() => {
+            this.props.chooseCharacter(index)
+            this.timedReset()
+          }}
         />
       )
     })
@@ -106,14 +100,14 @@ export default class CharacterScreen extends Component {
       return (
         <StartButton>
           <Link to="/game">
-            <img src={BtnStart} alt="" />
+            <img src={BtnStartPress} alt="" />
           </Link>
         </StartButton>
       )
     } else {
       return (
         <StartButton>
-          <img src={BtnStart} alt="" />
+          <img src={BtnStartStandard} alt="" />
         </StartButton>
       )
     }
@@ -122,7 +116,7 @@ export default class CharacterScreen extends Component {
   render() {
     return (
       <div className="container">
-        <Wrapper>
+        <Wrapper id="wrapper">
           {this.renderCards()}
           {this.props.player.band !== null ? (
             <audio src={this.props.player.band.audio} autoPlay />
