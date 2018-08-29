@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { useLocalStorage } from './middleware'
 
 import { createStore, applyMiddleware, compose } from 'redux'
@@ -16,10 +16,14 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   reducer,
   getInitialState(),
-  composeEnhancers(applyMiddleware(useLocalStorage)),
+  composeEnhancers(applyMiddleware(useLocalStorage))
 )
 
 class App extends Component {
+  componentDidUpdate() {
+    this.ScrollDown()
+  }
+
   ScrollDown = () => {
     setTimeout(function() {
       window.scrollTo(0, 1)
@@ -30,12 +34,11 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div>
-            {this.ScrollDown()}
+          <Switch>
             <Route exact path="/" component={StartScreen} />
             <Route path={'/characters'} component={CharacterScreenView} />
             <Route path={'/game'} component={GameView} />
-          </div>
+          </Switch>
         </Router>
       </Provider>
     )
