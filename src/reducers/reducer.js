@@ -61,6 +61,7 @@ export default (state, action) => {
       return {
         ...state,
         player: {
+          tile: null,
           position: { x: 11, y: 11 },
           band: null,
           roll: null
