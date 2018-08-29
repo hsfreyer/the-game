@@ -69,7 +69,8 @@ export default {
   player: {
     position: { x: 11, y: 11 },
     band: null,
-    roll: null
+    roll: null,
+    pawn: null
   },
   countDown: {
     sequence: [countDown1, countDown2, countDown3, countDown4, ''],
@@ -135,6 +136,14 @@ export default {
   bands: [
     {
       name: 'Bobo',
+      picture: imgEasy,
+      charSketch: sketchEasy,
+      gameImg: imgLogoEasy,
+      audio: audioEasy,
+      pawn: pawnEasy
+    },
+    {
+      name: 'Bibi',
       picture: imgEasy,
       charSketch: sketchEasy,
       gameImg: imgLogoEasy,

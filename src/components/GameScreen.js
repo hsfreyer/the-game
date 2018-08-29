@@ -119,6 +119,7 @@ export default class GameScreen extends Component {
             <Pawn
               posx={this.props.player.position.x}
               posy={this.props.player.position.y}
+              img={this.props.player.band.pawn}
             />
             <DiceResult img={this.props.dice.active.imgResult} />
             <Event img={this.getEventImg()} audio={this.getEventAudio()} />
@@ -126,7 +127,7 @@ export default class GameScreen extends Component {
         </Wrapper>
         <SecondWrapper>
           <Text>This game is displayed in landscape mode only </Text>
-          <img src={smartphone} />>
+          <img src={smartphone} alt="" />>
         </SecondWrapper>
       </Container>
     )
