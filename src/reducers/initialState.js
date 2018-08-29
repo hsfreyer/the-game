@@ -67,10 +67,8 @@ const yStart = 20
 
 export default {
   player: {
-    tile: null,
     position: { x: 11, y: 11 },
     band: null,
-    pawn: null,
     roll: null
   },
   countDown: {
@@ -136,7 +134,7 @@ export default {
   ],
   bands: [
     {
-      name: 'Easy',
+      name: 'Bobo',
       picture: imgEasy,
       charSketch: sketchEasy,
       gameImg: imgLogoEasy,
