@@ -108,7 +108,7 @@ export default {
       img: imgTileStandard,
       event: null,
       audio: null,
-      newposition: 0,
+      newposition: { x: xStart + 2, y: yStart + 5 },
     },
     {
       position: { x: xStart + 9, y: yStart + 3 },
@@ -186,7 +186,7 @@ export default {
       img: imgTileStandard,
       event: null,
       audio: null,
-      newposition: 11,
+      newposition: { x: xStart + 14, y: yStart + 59 },
     },
     {
       position: { x: xStart + 6, y: yStart + 55 },
