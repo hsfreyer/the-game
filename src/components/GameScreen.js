@@ -111,15 +111,17 @@ export default class GameScreen extends Component {
       setTimeout(() => this.props.movePawn(), 500 * i)
     }
     setTimeout(() => {
-      this.props.setClickBlock(false)
+      this.isEventOnTile()
+        ? this.props.setIsEvent(true)
+        : this.props.setClickBlock(false)
     }, 500 * roll)
   }
 
   isBlocked() {
     return this.props.isClickBlocked === true
   }
-  isEvent() {
-    return this.props.tiles[this.props.player.tile].event != null
+  isEventOnTile() {
+    return this.props.tiles[this.props.player.tile - 1].event != null
   }
   getEventImg() {
     const tile = this.props.player.tile || 1
@@ -132,14 +134,11 @@ export default class GameScreen extends Component {
     return audio ? audio : ' '
   }
 
-  renderEvent() {
-    if (this.isEvent()) {
-      return <Event img={this.getEventImg()} audio={this.getEventAudio()} />
-    } else {
-      this.props.setClickBlock(false)
-      return <Event img={''} audio={''} />
-    }
+  continue() {
+    this.props.setIsEvent(false)
+    this.props.setClickBlock(false)
   }
+
   render() {
     // console.log(this.props.dice.active.imgDice)
     return (
@@ -172,6 +171,12 @@ export default class GameScreen extends Component {
             />
             <DiceResult
               img={this.isBlocked() ? this.props.dice.active.imgResult : null}
+            />
+            <Event
+              display={this.props.isEvent ? 'block' : 'none'}
+              img={this.props.isEvent ? this.getEventImg() : null}
+              audio={this.props.isEvent ? this.getEventAudio() : null}
+              onClick={() => this.continue()}
             />
           </StyledGame>
         </Wrapper>

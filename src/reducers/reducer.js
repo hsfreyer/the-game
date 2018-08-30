@@ -73,6 +73,11 @@ export default (state, action) => {
         ...state,
         isClickBlocked: action.payload
       }
+    case Actions.SET_IS_EVENT:
+      return {
+        ...state,
+        isEvent: action.payload
+      }
     default:
       return state
   }
