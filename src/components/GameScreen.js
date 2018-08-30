@@ -15,6 +15,7 @@ import GameScreenPic from './GameScreenPic'
 import Pawn from './Pawn'
 
 import smartphone from '../images/smartphone.svg'
+import { throws } from 'assert'
 
 const StyledGame = styled('div')`
       width: 100%;
@@ -85,6 +86,7 @@ export default class GameScreen extends Component {
           img={tile.img}
           posx={tile.position.x}
           posy={tile.position.y}
+          newposition={tile.newposition}
           key={index}
         />
       )
@@ -133,10 +135,8 @@ export default class GameScreen extends Component {
     const audio = this.props.tiles[tile - 1].audio || null
     return audio ? audio : ' '
   }
-
   continue() {
-    this.props.setIsEvent(false)
-    this.props.setClickBlock(false)
+    this.props.setIsEvent(false), this.props.setClickBlock(false)
   }
 
   render() {

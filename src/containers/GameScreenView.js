@@ -5,7 +5,8 @@ import {
   rollDice,
   updateCount,
   setClickBlock,
-  setIsEvent
+  setIsEvent,
+  setNewPosition,
 } from '../actions'
 
 const mapStateToProps = state => ({
@@ -16,7 +17,7 @@ const mapStateToProps = state => ({
   countDownImage: state.countDown.image,
   pics: state.gameScreenPics,
   isClickBlocked: state.isClickBlocked,
-  isEvent: state.isEvent
+  isEvent: state.isEvent,
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -24,10 +25,11 @@ const mapDispatchToProps = dispatch => ({
   rollDice: roll => dispatch(rollDice(roll)),
   updateCount: image => dispatch(updateCount(image)),
   setClickBlock: bool => dispatch(setClickBlock(bool)),
-  setIsEvent: bool => dispatch(setIsEvent(bool))
+  setIsEvent: bool => dispatch(setIsEvent(bool)),
+  setNewPosition: newposition => dispatch(setNewPosition(newposition)),
 })
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(GameScreen)

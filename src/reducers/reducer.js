@@ -8,20 +8,20 @@ export default (state, action) => {
         ...state,
         dice: {
           ...state.dice,
-          active: state.dice.result[roll]
+          active: state.dice.result[roll],
         },
         player: {
           ...state.player,
-          roll: roll
-        }
+          roll: roll,
+        },
       }
     case Actions.UPDATE_COUNT:
       return {
         ...state,
         countDown: {
           ...state.countDown,
-          image: action.payload
-        }
+          image: action.payload,
+        },
       }
     case Actions.MOVE_PAWN:
       if (state.player.tile === null) {
@@ -30,8 +30,8 @@ export default (state, action) => {
           player: {
             ...state.player,
             position: state.tiles[0].position,
-            tile: 1
-          }
+            tile: 1,
+          },
         }
       } else if (state.player.tile >= state.tiles.length) {
         return state
@@ -42,8 +42,8 @@ export default (state, action) => {
           player: {
             ...state.player,
             position: state.tiles[state.player.tile].position,
-            tile: state.player.tile + 1
-          }
+            tile: state.player.tile + 1,
+          },
         }
       }
 
@@ -52,10 +52,10 @@ export default (state, action) => {
         ...state,
         player: {
           ...state.player,
-          band: state.bands[action.payload]
+          band: state.bands[action.payload],
         },
 
-        selectedCharacter: state.bands[action.payload].name
+        selectedCharacter: state.bands[action.payload].name,
       }
     case Actions.RESET_CHARACTERSCREEN:
       return {
@@ -64,19 +64,24 @@ export default (state, action) => {
           tile: null,
           position: { x: 11, y: 11 },
           band: null,
-          roll: null
+          roll: null,
         },
-        selectedCharacter: null
+        selectedCharacter: null,
       }
     case Actions.SET_CLICK_BLOCK:
       return {
         ...state,
-        isClickBlocked: action.payload
+        isClickBlocked: action.payload,
       }
     case Actions.SET_IS_EVENT:
       return {
         ...state,
-        isEvent: action.payload
+        isEvent: action.payload,
+      }
+    case Actions.SET_NEWPOSITION:
+      return {
+        ...state,
+        player: { position: action.payload },
       }
     default:
       return state
