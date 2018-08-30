@@ -3,17 +3,10 @@ import styled from 'react-emotion'
 
 export default class Card extends Component {
   autoplayCard = () => {
-    const {
-      picture,
-      sketch,
-      name,
-      area,
-      selectedCharacter,
-      onClick
-    } = this.props
+    const { picture, sketch, name, selectedCharacter, onClick } = this.props
 
     const CharacterCard = styled('img')`
-      max-width: 80%;
+      max-width: 100%;
       grid-area: ${name};
       transform: ${selectedCharacter === name
         ? 'rotate(5deg) scale(1.2)'
