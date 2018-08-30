@@ -26,7 +26,8 @@ const mapDispatchToProps = dispatch => ({
   updateCount: image => dispatch(updateCount(image)),
   setClickBlock: bool => dispatch(setClickBlock(bool)),
   setIsEvent: bool => dispatch(setIsEvent(bool)),
-  setNewPosition: newposition => dispatch(setNewPosition(newposition)),
+  setNewPosition: (newposition, newtile) =>
+    dispatch(setNewPosition(newposition, newtile)),
 })
 
 export default connect(

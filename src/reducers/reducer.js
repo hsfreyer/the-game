@@ -78,10 +78,14 @@ export default (state, action) => {
         ...state,
         isEvent: action.payload,
       }
-    case Actions.SET_NEWPOSITION:
+    case Actions.SET_NEW_POSITION:
       return {
         ...state,
-        player: { position: action.payload },
+        player: {
+          ...state.player,
+          position: action.payload,
+          tile: action.payload,
+        },
       }
     default:
       return state
