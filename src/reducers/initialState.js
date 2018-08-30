@@ -83,8 +83,9 @@ const yStart = 20
 
 export default {
   isClickBlocked: false,
+  isEvent: false,
   player: {
-    tile: null,
+    tile: 0,
     position: { x: 11, y: 11 },
     band: {
       name: 'Easy',

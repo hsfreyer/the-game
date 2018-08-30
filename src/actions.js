@@ -6,7 +6,8 @@ const Actions = {
   UPDATE_COUNT: 'UPDATE_COUNT',
   CHOOSE_CHARACTER: 'CHOOSE_CHARACTER',
   RESET_CHARACTERSCREEN: 'RESET_CHARACTERSCREEN',
-  TOGGLE_CLICK_BLOCK: 'TOGGLE_CLICK_BLOCK'
+  SET_CLICK_BLOCK: 'SET_CLICK_BLOCK',
+  SET_IS_EVENT: 'SET_IS_EVENT'
 }
 
 export default Actions
@@ -16,4 +17,5 @@ export const movePawn = createAction(Actions.MOVE_PAWN)
 export const updateCount = createAction(Actions.UPDATE_COUNT)
 export const chooseCharacter = createAction(Actions.CHOOSE_CHARACTER)
 export const resetCharacterScreen = createAction(Actions.RESET_CHARACTERSCREEN)
-export const toggleClickBlock = createAction(Actions.TOGGLE_CLICK_BLOCK)
+export const setClickBlock = createAction(Actions.SET_CLICK_BLOCK)
+export const setIsEvent = createAction(Actions.SET_IS_EVENT)

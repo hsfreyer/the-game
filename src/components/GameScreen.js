@@ -16,6 +16,18 @@ import Pawn from './Pawn'
 
 import smartphone from '../images/smartphone.svg'
 
+const StyledGame = styled('div')`
+      width: 100%;
+      height: 100%;
+      background: url('${imgBackground}') ;
+      background-size: cover;
+      overflow: hidden;
+      position:relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `
+
 const Wrapper = styled('div')`
   @media (orientation: portrait) {
     display: none;
@@ -45,6 +57,10 @@ const SecondWrapper = styled('div')`
 `
 
 export default class GameScreen extends Component {
+  componentWillMount() {
+    this.props.setClickBlock(true)
+  }
+
   componentDidMount() {
     this.countDown(this.props.countDownSequence)
   }
@@ -56,6 +72,9 @@ export default class GameScreen extends Component {
         this.props.updateCount(image)
       }, 1000 * index)
     })
+    setTimeout(() => {
+      this.props.setClickBlock(false)
+    }, 1000 * images.length)
   }
 
   positionTiles() {
@@ -91,8 +110,19 @@ export default class GameScreen extends Component {
     for (let i = 1; i < roll + 1; i++) {
       setTimeout(() => this.props.movePawn(), 500 * i)
     }
+    setTimeout(() => {
+      this.isEventOnTile()
+        ? this.props.setIsEvent(true)
+        : this.props.setClickBlock(false)
+    }, 500 * roll)
   }
 
+  isBlocked() {
+    return this.props.isClickBlocked === true
+  }
+  isEventOnTile() {
+    return this.props.tiles[this.props.player.tile - 1].event != null
+  }
   getEventImg() {
     const tile = this.props.player.tile || 1
     const event = this.props.tiles[tile - 1].event || null
@@ -103,18 +133,13 @@ export default class GameScreen extends Component {
     const audio = this.props.tiles[tile - 1].audio || null
     return audio ? audio : ' '
   }
+
+  continue() {
+    this.props.setIsEvent(false)
+    this.props.setClickBlock(false)
+  }
+
   render() {
-    const StyledGame = styled('div')`
-      width: 100%;
-      height: 100%;
-      background-image: url('${imgBackground}');
-      background-size: cover;
-      overflow: hidden;
-      position:relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    `
     // console.log(this.props.dice.active.imgDice)
     return (
       <div className="container">
@@ -129,19 +154,30 @@ export default class GameScreen extends Component {
             {this.positionPics()}
             <Dice
               img={this.props.dice.active.imgDice}
-              onClick={() => {
-                const roll = singleDice()
-                this.props.rollDice(roll)
-                this.pawnMovement(roll)
-              }}
+              onClick={
+                this.props.isClickBlocked === true
+                  ? () => console.log('block')
+                  : () => {
+                      const roll = singleDice()
+                      this.props.rollDice(roll)
+                      this.pawnMovement(roll)
+                    }
+              }
             />
             <Pawn
               posx={this.props.player.position.x}
               posy={this.props.player.position.y}
               img={this.props.player.band.pawn}
             />
-            <DiceResult img={this.props.dice.active.imgResult} />
-            <Event img={this.getEventImg()} audio={this.getEventAudio()} />
+            <DiceResult
+              img={this.isBlocked() ? this.props.dice.active.imgResult : null}
+            />
+            <Event
+              display={this.props.isEvent ? 'block' : 'none'}
+              img={this.props.isEvent ? this.getEventImg() : null}
+              audio={this.props.isEvent ? this.getEventAudio() : null}
+              onClick={() => this.continue()}
+            />
           </StyledGame>
         </Wrapper>
         <SecondWrapper>

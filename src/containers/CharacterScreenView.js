@@ -3,7 +3,7 @@ import CharacterScreen from '../components/CharacterScreen'
 import {
   chooseCharacter,
   resetCharacterScreen,
-  toggleClickBlock
+  setClickBlock
 } from '../actions'
 
 const mapStateToProps = state => ({
@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   chooseCharacter: character => dispatch(chooseCharacter(character)),
   resetCharacterScreen: () => dispatch(resetCharacterScreen()),
-  toggleClickBlock: () => dispatch(toggleClickBlock())
+  setClickBlock: bool => dispatch(setClickBlock(bool))
 })
 
 export default connect(

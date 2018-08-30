@@ -38,6 +38,7 @@ export default (state, action) => {
       } else {
         return {
           ...state,
+          isClickBlocked: true,
           player: {
             ...state.player,
             position: state.tiles[state.player.tile].position,
@@ -67,10 +68,15 @@ export default (state, action) => {
         },
         selectedCharacter: null
       }
-    case Actions.TOGGLE_CLICK_BLOCK:
+    case Actions.SET_CLICK_BLOCK:
       return {
         ...state,
-        isClickBlocked: !state.isClickBlocked
+        isClickBlocked: action.payload
+      }
+    case Actions.SET_IS_EVENT:
+      return {
+        ...state,
+        isEvent: action.payload
       }
     default:
       return state
