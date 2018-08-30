@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
 
-import Container from './Container'
 import titleScreen from '../images/T_TitleScreen.jpg'
 import { Link } from 'react-router-dom'
 import smartphone from '../images/smartphone.svg'

@@ -67,6 +67,11 @@ export default (state, action) => {
         },
         selectedCharacter: null
       }
+    case Actions.TOGGLE_CLICK_BLOCK:
+      return {
+        ...state,
+        isClickBlocked: !state.isClickBlocked
+      }
     default:
       return state
   }

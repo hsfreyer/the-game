@@ -83,12 +83,19 @@ const SecondWrapper = styled('div')`
 export default class CharacterScreen extends Component {
   componentDidMount() {
     this.props.resetCharacterScreen()
+    if (this.props.isClickBlocked === true) {
+      this.props.toggleClickBlock()
+    }
+  }
+  componentWillUnmount() {
+    clearTimeout(this.reset)
   }
 
   timedReset() {
-    setTimeout(() => {
+    this.reset = setTimeout(() => {
       this.props.resetCharacterScreen()
-    }, 10000)
+      this.props.toggleClickBlock()
+    }, 5000)
   }
 
   renderCards() {
@@ -101,10 +108,15 @@ export default class CharacterScreen extends Component {
           picture={band.charPicture}
           sketch={band.charSketch}
           selectedCharacter={this.props.selectedCharacter}
-          onClick={() => {
-            this.props.chooseCharacter(index)
-            this.timedReset()
-          }}
+          onClick={
+            this.props.isClickBlocked === true
+              ? () => console.log('block')
+              : () => {
+                  this.props.toggleClickBlock()
+                  this.props.chooseCharacter(index)
+                  this.timedReset()
+                }
+          }
         />
       )
     })
@@ -143,7 +155,7 @@ export default class CharacterScreen extends Component {
           </LogoWrapper>
           {this.renderStartButton()}
           <Instructions>
-            <img src={imgInstructions} />
+            <img src={imgInstructions} alt="" />
           </Instructions>
         </Wrapper>
         <SecondWrapper>

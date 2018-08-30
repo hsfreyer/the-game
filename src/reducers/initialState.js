@@ -1,6 +1,6 @@
 import imgTileStandard from '../images/in-game/T_ig_tile_standard.svg'
-import imgTilePress from '../images/in-game/T_ig_tile_press.svg'
-import imgTileHighlight from '../images/in-game/T_ig_tile_highlight.svg'
+// import imgTilePress from '../images/in-game/T_ig_tile_press.svg'
+// import imgTileHighlight from '../images/in-game/T_ig_tile_highlight.svg'
 
 import imgDiceActive from '../images/in-game/T_dice_06.svg'
 import imgDiceRoll from '../images/in-game/T_dice_mix.svg'
@@ -78,12 +78,11 @@ import aRide from '../images/in-game/arrow_ride.png'
 import aShow from '../images/in-game/arrow_show.png'
 import aSun from '../images/in-game/arrow_sun.png'
 
-import { singleDice } from '../utils'
-
 const xStart = 21
 const yStart = 20
 
 export default {
+  isClickBlocked: false,
   player: {
     tile: null,
     position: { x: 11, y: 11 },

@@ -14,9 +14,9 @@ export default class Card extends Component {
     `
 
     if (selectedCharacter === name) {
-      return <CharacterCard src={sketch} onClick={e => onClick()} />
+      return <CharacterCard src={sketch} onClick={() => onClick()} />
     } else {
-      return <CharacterCard src={picture} onClick={e => onClick()} />
+      return <CharacterCard src={picture} onClick={() => onClick()} />
     }
   }
   render() {
