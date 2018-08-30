@@ -139,9 +139,9 @@ export default class GameScreen extends Component {
     const currentTile = this.props.player.tile
     const newposition = this.props.tiles[currentTile].newposition
     const newTile = this.props.tiles[currentTile].newtile
-    console.log(newposition, newTile)
+    console.log(newposition)
     this.props.setIsEvent(false), this.props.setClickBlock(false)
-    // this.props.setNewPosition(newposition, newTile)
+    this.props.setNewPosition(newposition)
   }
 
   render() {
