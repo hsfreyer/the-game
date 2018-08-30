@@ -6,7 +6,7 @@ export default class Card extends Component {
     const { picture, sketch, name, selectedCharacter, onClick } = this.props
 
     const CharacterCard = styled('img')`
-      max-width: 100%;
+      max-width: 80%;
       grid-area: ${name};
       transform: ${selectedCharacter === name
         ? 'rotate(5deg) scale(1.2)'

@@ -43,8 +43,8 @@ const LogoWrapper = styled('div')`
   height: 80%;
   display: grid;
   grid-gap: 5%;
-  gris-template-rows: 1fr 1fr;
-  gris-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas: 'backseat reeperbahn' 'westside reeperbahn';
   justify-items: center;
   align-items: center;
