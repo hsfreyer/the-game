@@ -16,6 +16,18 @@ import Pawn from './Pawn'
 
 import smartphone from '../images/smartphone.svg'
 
+const StyledGame = styled('div')`
+      width: 100%;
+      height: 100%;
+      background: url('${imgBackground}') ;
+      background-size: cover;
+      overflow: hidden;
+      position:relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `
+
 const Wrapper = styled('div')`
   @media (orientation: portrait) {
     display: none;
@@ -104,17 +116,6 @@ export default class GameScreen extends Component {
     return audio ? audio : ' '
   }
   render() {
-    const StyledGame = styled('div')`
-      width: 100%;
-      height: 100%;
-      background-image: url('${imgBackground}');
-      background-size: cover;
-      overflow: hidden;
-      position:relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    `
     // console.log(this.props.dice.active.imgDice)
     return (
       <div className="container">
