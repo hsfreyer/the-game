@@ -83,9 +83,8 @@ const SecondWrapper = styled('div')`
 export default class CharacterScreen extends Component {
   componentDidMount() {
     this.props.resetCharacterScreen()
-    if (this.props.isClickBlocked === true) {
-      this.props.toggleClickBlock()
-    }
+
+    this.props.setClickBlock(false)
   }
   componentWillUnmount() {
     clearTimeout(this.reset)
@@ -94,7 +93,7 @@ export default class CharacterScreen extends Component {
   timedReset() {
     this.reset = setTimeout(() => {
       this.props.resetCharacterScreen()
-      this.props.toggleClickBlock()
+      this.props.setClickBlock(false)
     }, 5000)
   }
 
@@ -112,7 +111,7 @@ export default class CharacterScreen extends Component {
             this.props.isClickBlocked === true
               ? () => console.log('block')
               : () => {
-                  this.props.toggleClickBlock()
+                  this.props.setClickBlock(true)
                   this.props.chooseCharacter(index)
                   this.timedReset()
                 }

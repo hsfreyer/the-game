@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import GameScreen from '../components/GameScreen'
-import { movePawn, rollDice, updateCount, toggleClickBlock } from '../actions'
+import { movePawn, rollDice, updateCount, setClickBlock } from '../actions'
 
 const mapStateToProps = state => ({
   tiles: state.tiles,
@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
   movePawn: tile => dispatch(movePawn(tile)),
   rollDice: roll => dispatch(rollDice(roll)),
   updateCount: image => dispatch(updateCount(image)),
-  toggleClickBlock: () => dispatch(toggleClickBlock())
+  setClickBlock: bool => dispatch(setClickBlock(bool))
 })
 
 export default connect(
