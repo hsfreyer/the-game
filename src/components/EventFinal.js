@@ -42,7 +42,10 @@ export default class Event extends Component {
     return (
       <StyledEvent>
         <LinkWrapper>
-          <a href="https://www.facebook.com/events/1621256344650796/">
+          <a
+            target="_blank"
+            href="https://www.facebook.com/events/1621256344650796/"
+          >
             <ButtonLinkFB src={btnLink} alt="" />
           </a>
           <Link to="/characters">
