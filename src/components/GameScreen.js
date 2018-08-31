@@ -180,7 +180,7 @@ export default class GameScreen extends Component {
     return (
       <div className="container">
         <Wrapper>
-          <audio src={this.props.player.band.song} autoPlay repeat="true" />
+          <audio src={this.props.player.band.song} autoPlay loop="true" />
 
           <StyledGame className="overflow">
             <CountDown img={this.props.countDownImage} />
