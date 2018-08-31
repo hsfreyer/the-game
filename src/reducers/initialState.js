@@ -47,7 +47,7 @@ import event3cruise from '../images/in-game/T_e3_cruise.png'
 import event4backseat from '../images/in-game/T_e4_backseat.png'
 import event5wodka from '../images/in-game/T_e5_wodka.png'
 import event6molotow from '../images/in-game/T_e6_molotow.png'
-import event7pooca from '../images/in-game/T_e7_pooca.png'
+// import event7pooca from '../images/in-game/T_e7_pooca.png'
 
 import audioBaby from '../audio/CharSel/Baby Jesus - Choose a band.m4a'
 import audioEasy from '../audio/CharSel/Easy October - Choose a band.m4a'
@@ -65,7 +65,6 @@ import audioE3 from '../audio/events/Cruise Liner Final.m4a'
 import audioE4 from '../audio/events/Backseat Showcase.m4a'
 import audioE5 from '../audio/events/Wodka Bombe.mp3'
 import audioE6 from '../audio/events/Molotow Westside Story.m4a'
-import audioE7 from '../audio/events/Ende Finaler Sound Timetable Pooca Bar.m4a'
 
 import aDice from '../images/in-game/arrow_dice.png'
 import aDrinks from '../images/in-game/arrow_drinks.png'
@@ -273,8 +272,8 @@ export default {
     {
       position: { x: xStart + 43, y: yStart - 3 },
       img: imgTileEvent,
-      event: event7pooca,
-      audio: audioE7,
+      event: 'final',
+      audio: null,
       newTile: 0
     }
   ],

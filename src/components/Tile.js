@@ -10,6 +10,6 @@ export default class Tile extends Component {
       width: 5%;
     `
 
-    return <StyledTile src={this.props.img} alt="no pic here" />
+    return <StyledTile src={this.props.img} alt="" />
   }
 }

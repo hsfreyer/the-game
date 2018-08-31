@@ -10,6 +10,7 @@ import Dice from './Dice'
 import DiceResult from './DiceResult'
 import CountDown from './CountDown'
 import Event from './Event'
+import EventFinal from './EventFinal'
 import Tile from './Tile'
 import GameScreenPic from './GameScreenPic'
 import Pawn from './Pawn'
@@ -110,6 +111,7 @@ export default class GameScreen extends Component {
 
   diceRoll() {
     const roll = singleDice()
+    //   const roll = 6
     this.props.setAnimation(true)
     setTimeout(() => {
       this.props.rollDice(roll)
@@ -159,6 +161,20 @@ export default class GameScreen extends Component {
     this.props.activateDice()
   }
 
+  isFinalEvent() {
+    if (this.props.tiles[this.props.player.tile].event === 'final')
+      return <EventFinal />
+    else
+      return (
+        <Event
+          display={this.props.isEvent ? 'block' : 'none'}
+          img={this.props.isEvent ? this.getEventImg() : null}
+          audio={this.props.isEvent ? this.getEventAudio() : null}
+          onClick={() => this.continue()}
+        />
+      )
+  }
+
   render() {
     // console.log(this.props.dice.active.imgDice)
     return (
@@ -188,12 +204,7 @@ export default class GameScreen extends Component {
             />
 
             <DiceResult img={this.props.dice.active.imgResult} />
-            <Event
-              display={this.props.isEvent ? 'block' : 'none'}
-              img={this.props.isEvent ? this.getEventImg() : null}
-              audio={this.props.isEvent ? this.getEventAudio() : null}
-              onClick={() => this.continue()}
-            />
+            {this.isFinalEvent()}
           </StyledGame>
         </Wrapper>
         <SecondWrapper>
