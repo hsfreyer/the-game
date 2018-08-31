@@ -28,6 +28,14 @@ const SecondWrapper = styled('div')`
   align-items: center;
 `
 
+const StyledLink = styled('div')`
+  width: 50px;
+  height: 50px;
+  border-bottom: 3px solid white;
+  border-right: 3px solid white;
+  transform: rotate(-45deg) skew(-20deg, -20deg);
+`
+
 const Text = styled('p')`
   @media (orientation: landscape) {
     display: none;
@@ -48,7 +56,11 @@ export default class StartScreen extends Component {
 
     return (
       <div className="container">
-        <Wrapper />
+        <Wrapper>
+          <Link style={{ textDecoration: 'none' }} to="/characters">
+            <StyledLink />
+          </Link>
+        </Wrapper>
         <SecondWrapper>
           <Text>This game is displayed in landscape mode only </Text>
           <img src={smartphone} alt="" />
