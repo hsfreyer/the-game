@@ -5,8 +5,8 @@ export default class Pawn extends Component {
   render() {
     const StyledPawn = styled('img')`
       position: absolute;
-      left: ${this.props.posx}%;
-      bottom: ${this.props.posy}%;
+      left: ${this.props.tile.position.x}%;
+      bottom: ${this.props.tile.position.y}%;
       width: 10%;
     `
 

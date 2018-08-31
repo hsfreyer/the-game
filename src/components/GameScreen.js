@@ -123,25 +123,23 @@ export default class GameScreen extends Component {
     return this.props.isClickBlocked === true
   }
   isEventOnTile() {
-    return this.props.tiles[this.props.player.tile - 1].event != null
+    return this.props.tiles[this.props.player.tile].event != null
   }
   getEventImg() {
     const tile = this.props.player.tile || 1
-    const event = this.props.tiles[tile - 1].event || null
+    const event = this.props.tiles[tile].event || null
     return event ? event : ' '
   }
   getEventAudio() {
     const tile = this.props.player.tile || 1
-    const audio = this.props.tiles[tile - 1].audio || null
+    const audio = this.props.tiles[tile].audio || null
     return audio ? audio : ' '
   }
   continue() {
     const currentTile = this.props.player.tile
-    const newposition = this.props.tiles[currentTile].newposition
-    const newTile = this.props.tiles[currentTile].newtile
-    console.log(newposition)
+    const newTile = this.props.tiles[currentTile].newTile
     this.props.setIsEvent(false), this.props.setClickBlock(false)
-    this.props.setNewPosition(newposition)
+    this.props.setNewPosition(newTile)
   }
 
   render() {
@@ -170,8 +168,7 @@ export default class GameScreen extends Component {
               }
             />
             <Pawn
-              posx={this.props.player.position.x}
-              posy={this.props.player.position.y}
+              tile={this.props.tiles[this.props.player.tile]}
               img={this.props.player.band.pawn}
             />
             <DiceResult

@@ -86,92 +86,89 @@ export default {
   isEvent: false,
   player: {
     tile: 0,
-    position: { x: 11, y: 11 },
+    position: {},
     band: {
       name: 'Easy',
       picture: imgEasy,
       charSketch: sketchEasy,
       gameImg: imgLogoEasy,
       audio: audioEasy,
-      pawn: pawnEasy,
+      pawn: pawnEasy
     },
     roll: null,
-    pawn: null,
+    pawn: null
   },
   countDown: {
     sequence: [countDown1, countDown2, countDown3, countDown4, ''],
-    image: null,
+    image: null
   },
   tiles: [
+    {
+      position: { x: 11, y: 11 },
+      img: null,
+      event: null,
+      audio: null
+    },
     {
       position: { x: xStart + 2, y: yStart + 5 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: { x: xStart + 2, y: yStart + 5 },
+      audio: null
     },
     {
       position: { x: xStart + 9, y: yStart + 3 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 1,
+      audio: null
     },
     {
       position: { x: xStart + 16, y: yStart + 2 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 2,
+      audio: null
     },
     {
       position: { x: xStart + 21, y: yStart + 8 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 3,
+      audio: null
     },
     {
       position: { x: xStart + 26, y: yStart + 14 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 4,
+      audio: null
     },
     {
       position: { x: xStart + 30, y: yStart + 22 },
       img: imgTileStandard,
       event: event1jung,
       audio: audioE1,
-      newposition: { x: xStart + 26, y: yStart + 14 },
-      newtile: 5,
+      newTile: 3
     },
     {
       position: { x: xStart + 23, y: yStart + 23 },
       img: imgTileStandard,
       event: null,
-      audio: null,
+      audio: null
     },
     {
       position: { x: xStart + 16, y: yStart + 23 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 7,
+      audio: null
     },
     {
       position: { x: xStart + 9, y: yStart + 25 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 8,
+      audio: null
     },
     {
       position: { x: xStart + 7, y: yStart + 32 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 9,
+      audio: null
     },
     {
       position: { x: xStart + 6, y: yStart + 39 },
@@ -179,35 +176,31 @@ export default {
       event: event2ride,
       audio: audioE2,
       newposition: { x: xStart + 14, y: yStart + 59 },
-      newtile: 13,
+      newTile: 14
     },
     {
       position: { x: xStart + 5, y: yStart + 47 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: { x: xStart + 14, y: yStart + 59 },
+      audio: null
     },
     {
       position: { x: xStart + 6, y: yStart + 55 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 12,
+      audio: null
     },
     {
       position: { x: xStart + 14, y: yStart + 59 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 13,
+      audio: null
     },
     {
       position: { x: xStart + 22, y: yStart + 58 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 14,
+      audio: null
     },
     {
       position: { x: xStart + 30, y: yStart + 56 },
@@ -215,88 +208,78 @@ export default {
       event: event3cruise,
       audio: audioE3,
       newposition: { x: xStart + 2, y: yStart + 5 },
-      newtile: 0,
+      newTile: 0
     },
     {
       position: { x: xStart + 37, y: yStart + 54 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 16,
+      audio: null
     },
     {
       position: { x: xStart + 44, y: yStart + 52 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 17,
+      audio: null
     },
     {
       position: { x: xStart + 50, y: yStart + 47 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 18,
+      audio: null
     },
     {
       position: { x: xStart + 48, y: yStart + 40 },
       img: imgTileStandard,
       event: event4backseat,
       audio: audioE4,
-      newposition: 19,
+      newTile: 24
     },
     {
       position: { x: xStart + 45, y: yStart + 33 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 20,
+      audio: null
     },
     {
       position: { x: xStart + 45, y: yStart + 25 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 21,
+      audio: null
     },
     {
       position: { x: xStart + 51.5, y: yStart + 23 },
       img: imgTileStandard,
       event: event5wodka,
       audio: audioE5,
-      newposition: { x: xStart + 51.5, y: yStart + 23 },
-      newtile: 22,
+      newTile: 26
     },
     {
       position: { x: xStart + 50, y: yStart + 16 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 23,
+      audio: null
     },
     {
       position: { x: xStart + 46, y: yStart + 10 },
       img: imgTileStandard,
       event: event6molotow,
       audio: audioE6,
-      newposition: { x: xStart + 46, y: yStart + 10 },
-      newtile: 24,
+      newTile: 24
     },
     {
       position: { x: xStart + 42, y: yStart + 4 },
       img: imgTileStandard,
       event: null,
-      audio: null,
-      newposition: 25,
+      audio: null
     },
     {
       position: { x: xStart + 43, y: yStart - 3 },
       img: imgTileStandard,
       event: event7pooca,
       audio: audioE7,
-      newposition: { x: xStart + 43, y: yStart - 3 },
-      newtile: 26,
-    },
+      newTile: 0
+    }
   ],
   bands: [
     {
@@ -306,7 +289,7 @@ export default {
       gameImg: imgLogoEasy,
       audio: audioEasy,
       song: songEasy,
-      pawn: pawnEasy,
+      pawn: pawnEasy
     },
     {
       name: 'linn',
@@ -316,7 +299,7 @@ export default {
       audio: audioLinn,
       song: songLinn,
 
-      pawn: pawnLinn,
+      pawn: pawnLinn
     },
     {
       name: 'baby',
@@ -326,7 +309,7 @@ export default {
       audio: audioBaby,
       song: songBaby,
 
-      pawn: pawnBaby,
+      pawn: pawnBaby
     },
     {
       name: 'bottle',
@@ -336,8 +319,8 @@ export default {
       audio: audioBottle,
       song: songBottle,
 
-      pawn: pawnBottle,
-    },
+      pawn: pawnBottle
+    }
   ],
   dice: {
     active: { imgDice: imgDiceActive, imgResult: null },
@@ -348,50 +331,50 @@ export default {
       { imgDice: imgDice3, imgResult: imgResult3 },
       { imgDice: imgDice4, imgResult: imgResult4 },
       { imgDice: imgDice5, imgResult: imgResult5 },
-      { imgDice: imgDice6, imgResult: imgResult6 },
-    ],
+      { imgDice: imgDice6, imgResult: imgResult6 }
+    ]
   },
   selectedCharacter: null,
   gameScreenPics: [
     {
       img: aDice,
       position: { x: 85, y: 39 },
-      size: 12,
+      size: 12
     },
     {
       img: aDrinks,
       position: { x: 48, y: 48 },
-      size: 7,
+      size: 7
     },
     {
       img: aRide,
       position: { x: 33, y: 60 },
-      size: 6,
+      size: 6
     },
     {
       img: aSun,
       position: { x: 45, y: 66 },
-      size: 8,
+      size: 8
     },
     {
       img: aShow,
       position: { x: 57, y: 60 },
-      size: 13,
+      size: 13
     },
     {
       img: aLevel,
       position: { x: 78, y: 45 },
-      size: 6,
+      size: 6
     },
     {
       img: aMolotow,
       position: { x: 60, y: 32 },
-      size: 9,
+      size: 9
     },
     {
       img: aPooca,
       position: { x: 62, y: 8 },
-      size: 9,
-    },
-  ],
+      size: 9
+    }
+  ]
 }
