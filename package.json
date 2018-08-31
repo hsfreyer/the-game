@@ -1,6 +1,6 @@
 {
-  "name": "magic-game",
-  "version": "1.0.0",
+  "name": "the-game",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "emotion": "^9.1.3",
