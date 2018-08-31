@@ -4,7 +4,7 @@ import styled from 'react-emotion'
 export default class DiceResult extends Component {
   render() {
     const StyledDiceResult = styled('img')`
-      width: 7%;
+      height: 20%;
       object-fit: contain;
       position: absolute;
       bottom: 50%;
@@ -13,7 +13,7 @@ export default class DiceResult extends Component {
 
     return (
       <div>
-        <StyledDiceResult src={this.props.img} />
+        <StyledDiceResult src={this.props.img} className="dice-result-fade" />
       </div>
     )
   }

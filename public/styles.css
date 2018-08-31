@@ -40,6 +40,22 @@ body {
   animation: pump 1s 6, rotation 1s 4, pump 1s 2;
 }
 
+.dice-result-fade {
+  animation: fade-in-out 1s infinite ease-in-out;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @keyframes scramble {
   from {
     -webkit-transform: scale(1);
