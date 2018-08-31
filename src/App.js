@@ -36,6 +36,7 @@ class App extends Component {
             <Route exact path="/" component={StartScreen} />
             <Route path={'/characters'} component={CharacterScreenView} />
             <Route path={'/game'} component={GameView} />
+            <Route component={StartScreen} />
           </Switch>
         </Router>
       </Provider>
