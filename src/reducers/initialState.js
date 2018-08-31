@@ -317,12 +317,12 @@ export default {
       gameImg: imgLogoBottle,
       audio: audioBottle,
       song: songBottle,
-
       pawn: pawnBottle
     }
   ],
   dice: {
-    active: { imgDice: imgDiceActive, imgResult: null },
+    images: { active: imgDiceActive, roll: imgDiceRoll },
+    active: { imgDice: imgDiceActive, imgResult: null, imgHighlight: false },
     result: [
       { imgDice: imgDiceRoll, imgResult: null },
       { imgDice: imgDice1, imgResult: imgResult1 },

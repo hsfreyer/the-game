@@ -2,6 +2,30 @@ import Actions from '../actions'
 
 export default (state, action) => {
   switch (action.type) {
+    case Actions.ACTIVATE_DICE:
+      return {
+        ...state,
+        dice: {
+          ...state.dice,
+          active: {
+            imgDice: state.dice.images.active,
+            imgResult: null,
+            imgHighlight: true
+          }
+        }
+      }
+    case Actions.DEACTIVATE_DICE:
+      return {
+        ...state,
+        dice: {
+          ...state.dice,
+          active: {
+            imgDice: state.dice.images.active,
+            imgResult: null,
+            imgHighlight: false
+          }
+        }
+      }
     case Actions.ROLL_DICE:
       const roll = action.payload
       return {
@@ -73,7 +97,14 @@ export default (state, action) => {
     case Actions.SET_IS_EVENT:
       return {
         ...state,
-        isEvent: action.payload
+        isEvent: action.payload,
+        dice: {
+          ...state.dice,
+          active: {
+            ...state.dice.active,
+            imgHighlight: false
+          }
+        }
       }
     case Actions.SET_NEW_POSITION:
       return {

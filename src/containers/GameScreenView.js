@@ -1,12 +1,14 @@
 import { connect } from 'react-redux'
 import GameScreen from '../components/GameScreen'
 import {
-  movePawn,
+  activateDice,
+  deactivateDice,
   rollDice,
   updateCount,
+  movePawn,
   setClickBlock,
   setIsEvent,
-  setNewPosition,
+  setNewPosition
 } from '../actions'
 
 const mapStateToProps = state => ({
@@ -17,20 +19,22 @@ const mapStateToProps = state => ({
   countDownImage: state.countDown.image,
   pics: state.gameScreenPics,
   isClickBlocked: state.isClickBlocked,
-  isEvent: state.isEvent,
+  isEvent: state.isEvent
 })
 
 const mapDispatchToProps = dispatch => ({
-  movePawn: tile => dispatch(movePawn(tile)),
+  deactivateDice: () => dispatch(deactivateDice()),
+  activateDice: () => dispatch(activateDice()),
   rollDice: roll => dispatch(rollDice(roll)),
+  movePawn: tile => dispatch(movePawn(tile)),
   updateCount: image => dispatch(updateCount(image)),
   setClickBlock: bool => dispatch(setClickBlock(bool)),
   setIsEvent: bool => dispatch(setIsEvent(bool)),
   setNewPosition: (newposition, newtile) =>
-    dispatch(setNewPosition(newposition, newtile)),
+    dispatch(setNewPosition(newposition, newtile))
 })
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(GameScreen)

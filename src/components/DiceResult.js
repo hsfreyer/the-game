@@ -13,7 +13,7 @@ export default class DiceResult extends Component {
 
     return (
       <div>
-        <StyledDiceResult src={this.props.img} onClick={this.props.onClick} />
+        <StyledDiceResult src={this.props.img} />
       </div>
     )
   }

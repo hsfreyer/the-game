@@ -1,6 +1,8 @@
 import { createAction } from 'redux-actions'
 
 const Actions = {
+  ACTIVATE_DICE: 'ACTIVATE_DICE',
+  DEACTIVATE_DICE: 'DEACTIVATE_DICE',
   ROLL_DICE: 'ROLL_DICE',
   MOVE_PAWN: 'MOVE_PAWN',
   UPDATE_COUNT: 'UPDATE_COUNT',
@@ -8,11 +10,13 @@ const Actions = {
   RESET_CHARACTERSCREEN: 'RESET_CHARACTERSCREEN',
   SET_CLICK_BLOCK: 'SET_CLICK_BLOCK',
   SET_IS_EVENT: 'SET_IS_EVENT',
-  SET_NEW_POSITION: 'SET_NEW_POSITION',
+  SET_NEW_POSITION: 'SET_NEW_POSITION'
 }
 
 export default Actions
 
+export const deactivateDice = createAction(Actions.DEACTIVATE_DICE)
+export const activateDice = createAction(Actions.ACTIVATE_DICE)
 export const rollDice = createAction(Actions.ROLL_DICE)
 export const movePawn = createAction(Actions.MOVE_PAWN)
 export const updateCount = createAction(Actions.UPDATE_COUNT)

@@ -74,7 +74,8 @@ export default class GameScreen extends Component {
     })
     setTimeout(() => {
       this.props.setClickBlock(false)
-    }, 1000 * (images.length - 2))
+      this.props.activateDice()
+    }, 1000 * (images.length - 1))
   }
 
   positionTiles() {
@@ -107,6 +108,13 @@ export default class GameScreen extends Component {
     })
   }
 
+  diceRoll() {
+    const roll = singleDice()
+
+    this.props.rollDice(roll)
+    this.pawnMovement(roll)
+  }
+
   pawnMovement(roll) {
     for (let i = 1; i < roll + 1; i++) {
       setTimeout(() => this.props.movePawn(), 500 * i)
@@ -114,8 +122,8 @@ export default class GameScreen extends Component {
     setTimeout(() => {
       this.isEventOnTile()
         ? this.props.setIsEvent(true)
-        : this.props.setClickBlock(false)
-    }, 500 * roll)
+        : this.props.setClickBlock(false) && this.props.activateDice()
+    }, 500 * (roll + 1))
   }
 
   isBlocked() {
@@ -140,6 +148,7 @@ export default class GameScreen extends Component {
     this.props.setIsEvent(false)
     this.props.setClickBlock(false)
     this.props.setNewPosition(newTile)
+    this.props.activateDice()
   }
 
   render() {
@@ -155,8 +164,13 @@ export default class GameScreen extends Component {
             <BandLogo img={this.props.player.band.gameImg} />
             {this.positionTiles()}
             {this.positionPics()}
+            <Pawn
+              tile={this.props.tiles[this.props.player.tile]}
+              img={this.props.player.band.pawn}
+            />
             <Dice
               img={this.props.dice.active.imgDice}
+              hightlight={this.props.dice.active.imgHighlight}
               onClick={
                 this.props.isClickBlocked === true
                   ? () => console.log('block')
@@ -167,10 +181,7 @@ export default class GameScreen extends Component {
                     }
               }
             />
-            <Pawn
-              tile={this.props.tiles[this.props.player.tile]}
-              img={this.props.player.band.pawn}
-            />
+
             <DiceResult
               img={this.isBlocked() ? this.props.dice.active.imgResult : null}
             />
