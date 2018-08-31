@@ -48,6 +48,9 @@ const Text = styled('p')`
 `
 
 export default class StartScreen extends Component {
+  componentDidMount() {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }
   render() {
     return (
       <div className="container">
