@@ -90,12 +90,14 @@ export default class CharacterScreen extends Component {
     clearTimeout(this.reset)
   }
 
+  /*
   timedReset() {
     this.reset = setTimeout(() => {
       this.props.resetCharacterScreen()
       this.props.setClickBlock(false)
     }, 5000)
   }
+  */
 
   renderCards() {
     const bands = this.props.bands
@@ -111,9 +113,7 @@ export default class CharacterScreen extends Component {
             this.props.isClickBlocked === true
               ? () => console.log('block')
               : () => {
-                  this.props.setClickBlock(true)
                   this.props.chooseCharacter(index)
-                  this.timedReset()
                 }
           }
         />
