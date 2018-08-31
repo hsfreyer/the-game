@@ -1,5 +1,5 @@
 import imgTileStandard from '../images/in-game/T_ig_tile_standard.svg'
-// import imgTilePress from '../images/in-game/T_ig_tile_press.svg'
+import imgTileEvent from '../images/in-game/T_ig_tile_press.svg'
 // import imgTileHighlight from '../images/in-game/T_ig_tile_highlight.svg'
 
 import imgDiceActive from '../images/in-game/T_dice_06.svg'
@@ -140,7 +140,7 @@ export default {
     },
     {
       position: { x: xStart + 30, y: yStart + 22 },
-      img: imgTileStandard,
+      img: imgTileEvent,
       event: event1jung,
       audio: audioE1,
       newTile: 3
@@ -171,7 +171,7 @@ export default {
     },
     {
       position: { x: xStart + 6, y: yStart + 39 },
-      img: imgTileStandard,
+      img: imgTileEvent,
       event: event2ride,
       audio: audioE2,
       newposition: { x: xStart + 14, y: yStart + 59 },
@@ -203,7 +203,7 @@ export default {
     },
     {
       position: { x: xStart + 30, y: yStart + 56 },
-      img: imgTileStandard,
+      img: imgTileEvent,
       event: event3cruise,
       audio: audioE3,
       newposition: { x: xStart + 2, y: yStart + 5 },
@@ -229,7 +229,7 @@ export default {
     },
     {
       position: { x: xStart + 48, y: yStart + 40 },
-      img: imgTileStandard,
+      img: imgTileEvent,
       event: event4backseat,
       audio: audioE4,
       newTile: 24
@@ -248,7 +248,7 @@ export default {
     },
     {
       position: { x: xStart + 51.5, y: yStart + 23 },
-      img: imgTileStandard,
+      img: imgTileEvent,
       event: event5wodka,
       audio: audioE5,
       newTile: 26
@@ -261,10 +261,10 @@ export default {
     },
     {
       position: { x: xStart + 46, y: yStart + 10 },
-      img: imgTileStandard,
+      img: imgTileEvent,
       event: event6molotow,
       audio: audioE6,
-      newTile: 24
+      newTile: 21
     },
     {
       position: { x: xStart + 42, y: yStart + 4 },
@@ -274,7 +274,7 @@ export default {
     },
     {
       position: { x: xStart + 43, y: yStart - 3 },
-      img: imgTileStandard,
+      img: imgTileEvent,
       event: event7pooca,
       audio: audioE7,
       newTile: 0

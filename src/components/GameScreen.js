@@ -74,7 +74,7 @@ export default class GameScreen extends Component {
     })
     setTimeout(() => {
       this.props.setClickBlock(false)
-    }, 1000 * images.length)
+    }, 1000 * (images.length - 2))
   }
 
   positionTiles() {
@@ -137,7 +137,8 @@ export default class GameScreen extends Component {
   continue() {
     const currentTile = this.props.player.tile
     const newTile = this.props.tiles[currentTile].newTile
-    this.props.setIsEvent(false), this.props.setClickBlock(false)
+    this.props.setIsEvent(false)
+    this.props.setClickBlock(false)
     this.props.setNewPosition(newTile)
   }
 
