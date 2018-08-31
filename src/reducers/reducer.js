@@ -2,14 +2,21 @@ import Actions from '../actions'
 
 export default (state, action) => {
   switch (action.type) {
+    case Actions.UPDATE_COUNT:
+      return {
+        ...state,
+        countDown: {
+          ...state.countDown,
+          image: action.payload
+        }
+      }
     case Actions.ACTIVATE_DICE:
       return {
         ...state,
         dice: {
           ...state.dice,
           active: {
-            imgDice: state.dice.images.active,
-            imgResult: null,
+            ...state.dice.active,
             imgHighlight: true
           }
         }
@@ -32,19 +39,38 @@ export default (state, action) => {
         ...state,
         dice: {
           ...state.dice,
-          active: state.dice.result[roll]
+          active: {
+            ...state.dice.active,
+            imgDice: state.dice.result[roll].imgDice,
+            imgResult: state.dice.result[roll].imgResult,
+            imgHighlight: false
+          }
         },
         player: {
           ...state.player,
           roll: roll
         }
       }
-    case Actions.UPDATE_COUNT:
+    case Actions.SET_ANIMATION:
       return {
         ...state,
-        countDown: {
-          ...state.countDown,
-          image: action.payload
+        dice: {
+          ...state.dice,
+          active: {
+            ...state.dice.active,
+            rollAnimation: action.payload
+          }
+        }
+      }
+    case Actions.SET_RESULT_IMAGE:
+      return {
+        ...state,
+        dice: {
+          ...state.dice,
+          active: {
+            ...state.dice.active,
+            imgResult: state.dice.result[action.payload].imgResult
+          }
         }
       }
     case Actions.MOVE_PAWN:

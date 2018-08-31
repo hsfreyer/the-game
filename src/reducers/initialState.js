@@ -2,8 +2,6 @@ import imgTileStandard from '../images/in-game/T_ig_tile_standard.svg'
 import imgTileEvent from '../images/in-game/T_ig_tile_press.svg'
 // import imgTileHighlight from '../images/in-game/T_ig_tile_highlight.svg'
 
-import imgDiceActive from '../images/in-game/T_dice_06.svg'
-import imgDiceRoll from '../images/in-game/T_dice_mix.svg'
 import imgDice1 from '../images/in-game/T_dice_01.svg'
 import imgDice2 from '../images/in-game/T_dice_02.svg'
 import imgDice3 from '../images/in-game/T_dice_03.svg'
@@ -321,10 +319,14 @@ export default {
     }
   ],
   dice: {
-    images: { active: imgDiceActive, roll: imgDiceRoll },
-    active: { imgDice: imgDiceActive, imgResult: null, imgHighlight: false },
+    active: {
+      imgDice: imgDice6,
+      imgResult: null,
+      imgHighlight: false,
+      rollAnimation: false
+    },
     result: [
-      { imgDice: imgDiceRoll, imgResult: null },
+      { imgDice: null, imgResult: null },
       { imgDice: imgDice1, imgResult: imgResult1 },
       { imgDice: imgDice2, imgResult: imgResult2 },
       { imgDice: imgDice3, imgResult: imgResult3 },

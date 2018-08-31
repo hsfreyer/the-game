@@ -110,9 +110,17 @@ export default class GameScreen extends Component {
 
   diceRoll() {
     const roll = singleDice()
+    this.props.setAnimation(true)
+    setTimeout(() => {
+      this.props.rollDice(roll)
+      this.props.setResultImage(roll)
+      this.props.setAnimation(false)
+    }, 1000)
 
-    this.props.rollDice(roll)
-    this.pawnMovement(roll)
+    setTimeout(() => {
+      this.props.setResultImage(0)
+      this.pawnMovement(roll)
+    }, 2000)
   }
 
   pawnMovement(roll) {
@@ -171,20 +179,15 @@ export default class GameScreen extends Component {
             <Dice
               img={this.props.dice.active.imgDice}
               hightlight={this.props.dice.active.imgHighlight}
+              animation={this.props.dice.active.rollAnimation}
               onClick={
                 this.props.isClickBlocked === true
                   ? () => console.log('block')
-                  : () => {
-                      const roll = singleDice()
-                      this.props.rollDice(roll)
-                      this.pawnMovement(roll)
-                    }
+                  : () => this.diceRoll()
               }
             />
 
-            <DiceResult
-              img={this.isBlocked() ? this.props.dice.active.imgResult : null}
-            />
+            <DiceResult img={this.props.dice.active.imgResult} />
             <Event
               display={this.props.isEvent ? 'block' : 'none'}
               img={this.props.isEvent ? this.getEventImg() : null}
