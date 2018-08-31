@@ -40,7 +40,6 @@ export default (state, action) => {
           isClickBlocked: true,
           player: {
             ...state.player,
-            position: state.tiles[state.player.tile].position,
             tile: state.player.tile + 1
           }
         }
@@ -60,8 +59,7 @@ export default (state, action) => {
       return {
         ...state,
         player: {
-          tile: null,
-          position: { x: 11, y: 11 },
+          tile: 0,
           band: null,
           roll: null
         },
@@ -82,8 +80,7 @@ export default (state, action) => {
         ...state,
         player: {
           ...state.player,
-          tile: action.payload,
-          position: state.tiles[action.payload].position
+          tile: action.payload
         }
       }
     default:

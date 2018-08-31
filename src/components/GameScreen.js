@@ -15,7 +15,6 @@ import GameScreenPic from './GameScreenPic'
 import Pawn from './Pawn'
 
 import smartphone from '../images/smartphone.svg'
-import { throws } from 'assert'
 
 const StyledGame = styled('div')`
       width: 100%;

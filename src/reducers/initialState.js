@@ -86,7 +86,6 @@ export default {
   isEvent: false,
   player: {
     tile: 0,
-    position: {},
     band: {
       name: 'Easy',
       picture: imgEasy,
