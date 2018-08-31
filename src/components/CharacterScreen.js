@@ -10,8 +10,8 @@ import logoBackseat from '../images/T_Logo_Backseat.svg'
 import logoWestside from '../images/T_Logo_Westside.svg'
 import logoReeperbahn from '../images/T_Logo_Reeperbahn.svg'
 import imgInstructions from '../images/char-sel/T_CharacterMenu_Intructions.svg'
-import BtnStartStandard from '../images/char-sel/bttn_start_on.svg'
-import BtnStartPress from '../images/char-sel/bttn_start_press.svg'
+import BtnStartOff from '../images/char-sel/bttn_start_off.svg'
+import BtnStartOn from '../images/char-sel/bttn_start_on.svg'
 
 import Card from './Card'
 import Logo from './Logo'
@@ -126,14 +126,14 @@ export default class CharacterScreen extends Component {
       return (
         <StartButton>
           <Link to="/game">
-            <img src={BtnStartPress} alt="" />
+            <img src={BtnStartOn} alt="" />
           </Link>
         </StartButton>
       )
     } else {
       return (
         <StartButton>
-          <img src={BtnStartStandard} alt="" />
+          <img src={BtnStartOff} alt="" />
         </StartButton>
       )
     }
