@@ -1,20 +1,22 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 
 import reducer from './reducers/reducer'
 import initialState from './reducers/initialState'
+import { useLocalStorage } from './middleware'
 
 import StartScreen from './components/StartScreen'
 import CharacterScreenView from './containers/CharacterScreenView'
 import GameView from './containers/GameScreenView'
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   reducer,
-  initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  getInitialState(),
+  composeEnhancers(applyMiddleware(useLocalStorage)),
 )
 
 class App extends Component {
@@ -43,5 +45,12 @@ class App extends Component {
     )
   }
 }
-
+function getInitialState() {
+  const savedState = localStorage.getItem('state')
+  if (savedState) {
+    return JSON.parse(savedState)
+  } else {
+    return initialState
+  }
+}
 export default App
