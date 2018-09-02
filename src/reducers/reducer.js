@@ -7,8 +7,8 @@ export default (state, action) => {
         ...state,
         countDown: {
           ...state.countDown,
-          image: action.payload
-        }
+          image: action.payload,
+        },
       }
     case Actions.ACTIVATE_DICE:
       return {
@@ -17,9 +17,9 @@ export default (state, action) => {
           ...state.dice,
           active: {
             ...state.dice.active,
-            imgHighlight: true
-          }
-        }
+            imgHighlight: true,
+          },
+        },
       }
     case Actions.DEACTIVATE_DICE:
       return {
@@ -29,9 +29,9 @@ export default (state, action) => {
           active: {
             imgDice: state.dice.images.active,
             imgResult: null,
-            imgHighlight: false
-          }
-        }
+            imgHighlight: false,
+          },
+        },
       }
     case Actions.ROLL_DICE:
       const roll = action.payload
@@ -43,13 +43,13 @@ export default (state, action) => {
             ...state.dice.active,
             imgDice: state.dice.result[roll].imgDice,
             imgResult: state.dice.result[roll].imgResult,
-            imgHighlight: false
-          }
+            imgHighlight: false,
+          },
         },
         player: {
           ...state.player,
-          roll: roll
-        }
+          roll: roll,
+        },
       }
     case Actions.SET_ANIMATION:
       return {
@@ -58,9 +58,9 @@ export default (state, action) => {
           ...state.dice,
           active: {
             ...state.dice.active,
-            rollAnimation: action.payload
-          }
-        }
+            rollAnimation: action.payload,
+          },
+        },
       }
     case Actions.SET_RESULT_IMAGE:
       return {
@@ -69,9 +69,9 @@ export default (state, action) => {
           ...state.dice,
           active: {
             ...state.dice.active,
-            imgResult: state.dice.result[action.payload].imgResult
-          }
-        }
+            imgResult: state.dice.result[action.payload].imgResult,
+          },
+        },
       }
     case Actions.MOVE_PAWN:
       if (state.player.tile === null) {
@@ -79,8 +79,8 @@ export default (state, action) => {
           ...state,
           player: {
             ...state.player,
-            tile: 0
-          }
+            tile: 0,
+          },
         }
       } else if (state.player.tile >= state.tiles.length - 1) {
         return state
@@ -90,8 +90,8 @@ export default (state, action) => {
           isClickBlocked: true,
           player: {
             ...state.player,
-            tile: state.player.tile + 1
-          }
+            tile: state.player.tile + 1,
+          },
         }
       }
 
@@ -100,25 +100,22 @@ export default (state, action) => {
         ...state,
         player: {
           ...state.player,
-          band: state.bands[action.payload]
+          band: state.bands[action.payload],
         },
 
-        selectedCharacter: state.bands[action.payload].name
+        selectedCharacter: state.bands[action.payload].name,
       }
     case Actions.RESET_CHARACTERSCREEN:
       return {
         ...state,
-        player: {
-          tile: 0,
-          band: null,
-          roll: null
-        },
-        selectedCharacter: null
+        isEvent: false,
+        player: { tile: 0, band: null, roll: null },
+        selectedCharacter: null,
       }
     case Actions.SET_CLICK_BLOCK:
       return {
         ...state,
-        isClickBlocked: action.payload
+        isClickBlocked: action.payload,
       }
     case Actions.SET_IS_EVENT:
       return {
@@ -128,17 +125,17 @@ export default (state, action) => {
           ...state.dice,
           active: {
             ...state.dice.active,
-            imgHighlight: false
-          }
-        }
+            imgHighlight: false,
+          },
+        },
       }
     case Actions.SET_NEW_POSITION:
       return {
         ...state,
         player: {
           ...state.player,
-          tile: action.payload
-        }
+          tile: action.payload,
+        },
       }
     default:
       return state
