@@ -98,6 +98,7 @@ export default (state, action) => {
     case Actions.CHOOSE_CHARACTER:
       return {
         ...state,
+        isEvent: false,
         player: {
           ...state.player,
           band: state.bands[action.payload],
@@ -132,6 +133,7 @@ export default (state, action) => {
     case Actions.SET_NEW_POSITION:
       return {
         ...state,
+        isEvent: false,
         player: {
           ...state.player,
           tile: action.payload,
