@@ -80,6 +80,13 @@ const SecondWrapper = styled('div')`
   align-items: center;
 `
 
+const Image = styled('img')`
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  transform: rotate(-90deg);
+`
+
 export default class CharacterScreen extends Component {
   componentDidMount() {
     this.props.resetCharacterScreen()
@@ -161,7 +168,7 @@ export default class CharacterScreen extends Component {
           <DisplayText>
             This game is displayed in landscape mode only{' '}
           </DisplayText>
-          <img src={smartphone} alt="" />
+          <Image src={smartphone} alt="" />
         </SecondWrapper>
       </div>
     )

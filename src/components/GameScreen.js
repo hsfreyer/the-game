@@ -57,6 +57,13 @@ const SecondWrapper = styled('div')`
   align-items: center;
 `
 
+const Image = styled('img')`
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  transform: rotate(-90deg);
+`
+
 export default class GameScreen extends Component {
   componentWillMount() {
     this.props.setClickBlock(true)
@@ -209,7 +216,7 @@ export default class GameScreen extends Component {
         </Wrapper>
         <SecondWrapper>
           <Text>This game is displayed in landscape mode only </Text>
-          <img src={smartphone} alt="" />>
+          <Image src={smartphone} alt="" />
         </SecondWrapper>
       </div>
     )

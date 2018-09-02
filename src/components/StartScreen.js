@@ -38,6 +38,13 @@ const Text = styled('p')`
   margin-left: 2rem;
 `
 
+const Image = styled('img')`
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  transform: rotate(-90deg);
+`
+
 export default class StartScreen extends Component {
   componentDidMount() {
     window.scrollTo({ top: 0, behavior: 'instant' })
@@ -50,7 +57,7 @@ export default class StartScreen extends Component {
         <Wrapper />
         <SecondWrapper>
           <Text>This game is displayed in landscape mode only </Text>
-          <img src={smartphone} alt="" />
+          <Image src={smartphone} alt="" />
         </SecondWrapper>
       </div>
     )
