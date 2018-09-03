@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 
 import reducer from './reducers/reducer'
@@ -11,10 +11,11 @@ import StartScreen from './components/StartScreen'
 import CharacterScreenView from './containers/CharacterScreenView'
 import GameView from './containers/GameScreenView'
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   reducer,
-  initialState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  getInitialState(),
+  composeEnhancers(applyMiddleware(useLocalStorage))
 )
 
 class App extends Component {
