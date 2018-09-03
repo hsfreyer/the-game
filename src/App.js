@@ -16,7 +16,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   reducer,
   getInitialState(),
-  composeEnhancers(applyMiddleware(useLocalStorage)),
+  composeEnhancers(applyMiddleware(useLocalStorage))
 )
 
 class App extends Component {

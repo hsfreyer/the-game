@@ -110,7 +110,11 @@ export default (state, action) => {
       return {
         ...state,
         isEvent: false,
-        player: { tile: 0, band: null, roll: null },
+        player: {
+          tile: 0,
+          band: null,
+          roll: null
+        },
         selectedCharacter: null
       }
     case Actions.SET_CLICK_BLOCK:
