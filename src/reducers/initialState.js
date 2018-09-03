@@ -83,7 +83,14 @@ export default {
   isEvent: false,
   player: {
     tile: 0,
-    band: {},
+    band: {
+      name: 'Easy',
+      picture: imgEasy,
+      charSketch: sketchEasy,
+      gameImg: imgLogoEasy,
+      audio: audioEasy,
+      pawn: pawnEasy
+    },
     roll: null,
     pawn: null
   },
