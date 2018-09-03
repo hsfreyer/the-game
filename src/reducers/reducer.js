@@ -108,7 +108,6 @@ export default (state, action) => {
     case Actions.RESET_CHARACTERSCREEN:
       return {
         ...state,
-        isEvent: false,
         player: {
           tile: 0,
           band: null,
