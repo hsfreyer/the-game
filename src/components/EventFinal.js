@@ -45,6 +45,7 @@ export default class Event extends Component {
           <a
             target="_blank"
             href="https://www.facebook.com/events/1621256344650796/"
+            rel="noopener noreferrer"
           >
             <ButtonLinkFB src={btnLink} alt="" />
           </a>
