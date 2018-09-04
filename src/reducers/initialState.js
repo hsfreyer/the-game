@@ -19,7 +19,7 @@ import imgResult6 from '../images/in-game/T_dice_num_06.svg'
 import countDown1 from '../images/in-game/T_countdown_01.svg'
 import countDown2 from '../images/in-game/T_countdown_02.svg'
 import countDown3 from '../images/in-game/T_countdown_03.svg'
-import countDown4 from '../images/in-game/T_countdown_04.svg'
+import countDownRnR from '../images/in-game/T_countdown_04.svg'
 
 import imgEasy from '../images/char-sel/T_cm_b1_easy.jpg'
 import imgLinn from '../images/char-sel/T_cm_b2_linn.jpg'
@@ -60,11 +60,11 @@ import songEasy from '../audio/in-game/easy_in-game.mp3'
 import songLinn from '../audio/in-game/linn_in-game.mp3'
 
 import audioE1 from '../audio/events/audioE1.m4a'
-import audioE2 from '../audio/events/Backseat Ride Bicycle.wav'
+import audioE2 from '../audio/events/Backseat Ride Bicycle.mp3'
 import audioE3 from '../audio/events/Cruise Liner Final.m4a'
 import audioE4 from '../audio/events/Backseat Showcase.m4a'
-import audioE5 from '../audio/events/Wodka Bombe.mp3'
-import audioE6 from '../audio/events/Molotow Westside Story.m4a'
+import audioE5 from '../audio/events/Wodka Bombe Level Up.m4a'
+import audioE6 from '../audio/events/Molotow Westside Story.mp3'
 
 import aDice from '../images/in-game/arrow_dice.png'
 import aDrinks from '../images/in-game/arrow_drinks.png'
@@ -95,7 +95,7 @@ export default {
     pawn: null
   },
   countDown: {
-    sequence: [countDown1, countDown2, countDown3, countDown4, ''],
+    sequence: [countDown3, countDown2, countDown1, countDownRnR, ''],
     image: null
   },
   tiles: [
@@ -204,7 +204,7 @@ export default {
       event: event3cruise,
       audio: audioE3,
       newposition: { x: xStart + 2, y: yStart + 5 },
-      newTile: 0
+      newTile: 13
     },
     {
       position: { x: xStart + 37, y: yStart + 54 },
