@@ -30,12 +30,10 @@ export default class Event extends Component {
 
     const ButtonLinkFB = styled('img')`
       width: 25%;
-      height: 20%;
       transform: rotate(12deg);
     `
     const ButtonRestart = styled('img')`
       width: 25%;
-      height: 20%;
       transform: rotate(12deg);
     `
 
