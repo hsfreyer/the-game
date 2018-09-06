@@ -16,8 +16,8 @@ export default class Event extends Component {
     `
     const ButtonContinue = styled('img')`
       display: ${this.props.display};
-      width: 20%;
-      height: 20%;
+      width: 25%;
+      height: 25%;
       transform: rotate(12deg);
       position: relative;
       top: 60%;
