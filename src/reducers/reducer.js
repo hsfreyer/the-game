@@ -120,7 +120,14 @@ export default (state, action) => {
     case Actions.SET_CLICK_BLOCK:
       return {
         ...state,
-        isClickBlocked: action.payload
+        isClickBlocked: action.payload,
+        dice: {
+          ...state.dice,
+          active: {
+            ...state.dice.active,
+            imgHighlight: false
+          }
+        }
       }
     case Actions.SET_IS_EVENT:
       return {
