@@ -6,7 +6,7 @@ import imgFinal from '../images/in-game/T_e7_pooca.png'
 import btnRestart from '../images/in-game/bttn_playagain_on.svg'
 import btnLink from '../images/in-game/bttn_goto_on.svg'
 
-import audioFinal from '../audio/events/Ende Finaler Sound Timetable Pooca Bar.m4a'
+import audioFinal from '../audio/events/Pooca Bar - Applause.mp3'
 
 export default class Event extends Component {
   render() {
